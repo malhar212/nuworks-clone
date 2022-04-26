@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<% include ./partials/head %>
+
+    <body class="d-flex flex-column min-vh-100">
+        <% include ./partials/nav %>
+        <div class="container col-md-3">
+            <form class="pt-5" action="loginSubmit" method="post">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" required id="email" name="email" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" required id="password" name="password">
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+            <% include ./partials/footer %>
+
+            <% include ./partials/scripts %>
+    </body>
+
+</html>

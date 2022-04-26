@@ -1,0 +1,18 @@
+<div class="container">
+    <ul class="list-group">
+      <% jobs.forEach(function(job){ %>
+          <li class="list-group-item">
+              <div class="card">
+                  <div class="card-header">
+                      <%= job.position %>
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title"><%= job.organization %></h5>
+                      <p class="card-text"><%= job.description %></p>
+                      <a href="#" class="btn btn-primary">Apply</a>
+                  </div>
+              </div>
+          </li>
+      <% }); %>
+  </ul>
+</div>
