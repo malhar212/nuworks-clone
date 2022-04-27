@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `malhar` /*!40100 DEFAULT CHARACTER SET utf8mb4 C
 USE `malhar`;
 -- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
 --
--- Host: localhost    Database: main
+-- Host: localhost    Database: malhar
 -- ------------------------------------------------------
 -- Server version	8.0.28
 
@@ -61,7 +61,7 @@ CREATE TABLE `city` (
   PRIMARY KEY (`cityid`),
   KEY `fk_stateid_idx` (`stateid`),
   CONSTRAINT `fk_citystateid` FOREIGN KEY (`stateid`) REFERENCES `state` (`stateid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -109,21 +109,24 @@ DROP TABLE IF EXISTS `job`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `job` (
   `jobid` int NOT NULL AUTO_INCREMENT,
-  `position` varchar(45) DEFAULT NULL,
+  `position` varchar(255) DEFAULT NULL,
   `type` varchar(45) DEFAULT NULL,
-  `description` varchar(45) DEFAULT NULL,
-  `publishdate` varchar(45) DEFAULT NULL,
+  `description` longtext,
+  `publishdate` datetime DEFAULT CURRENT_TIMESTAMP,
   `vacancy_count` varchar(45) DEFAULT NULL,
   `status` varchar(45) DEFAULT NULL,
   `locationid` int DEFAULT NULL,
   `organizationid` int DEFAULT NULL,
   `category` varchar(45) DEFAULT NULL,
+  `userid` int DEFAULT NULL,
   PRIMARY KEY (`jobid`),
   KEY `fk_joblocationid_idx` (`locationid`),
   KEY `fk_joborganizationid_idx` (`organizationid`),
+  KEY `fk_jobuserid_idx` (`userid`),
   CONSTRAINT `fk_joblocationid` FOREIGN KEY (`locationid`) REFERENCES `location` (`locationid`),
-  CONSTRAINT `fk_joborganizationid` FOREIGN KEY (`organizationid`) REFERENCES `organization` (`orgid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_joborganizationid` FOREIGN KEY (`organizationid`) REFERENCES `organization` (`orgid`),
+  CONSTRAINT `fk_jobuserid` FOREIGN KEY (`userid`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -151,7 +154,7 @@ CREATE TABLE `location` (
   KEY `stateid_idx` (`stateid`),
   CONSTRAINT `cityid` FOREIGN KEY (`cityid`) REFERENCES `city` (`cityid`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `stateid` FOREIGN KEY (`stateid`) REFERENCES `state` (`stateid`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -172,7 +175,7 @@ DROP TABLE IF EXISTS `organization`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `organization` (
   `orgid` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
   `size` varchar(45) DEFAULT NULL,
   `description` varchar(45) DEFAULT NULL,
   `website` varchar(45) DEFAULT NULL,
@@ -180,7 +183,7 @@ CREATE TABLE `organization` (
   PRIMARY KEY (`orgid`),
   KEY `fk_organizationlocationid_idx` (`locationid`),
   CONSTRAINT `fk_organizationlocationid` FOREIGN KEY (`locationid`) REFERENCES `location` (`locationid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -227,7 +230,7 @@ CREATE TABLE `state` (
   `stateid` int NOT NULL AUTO_INCREMENT,
   `name` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`stateid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -280,4 +283,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-26  1:37:10
+-- Dump completed on 2022-04-27 16:05:25
