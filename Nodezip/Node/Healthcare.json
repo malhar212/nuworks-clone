@@ -1,0 +1,590 @@
+{
+    "perPage": 20,
+    "page": 1,
+    "total": 410,
+    "className": "job",
+    "models": [
+        {
+            "job_id": "44f00c528fc6fa70070125caafa535ee",
+            "name": "KevaHealth Inc",
+            "blind_flag": 0,
+            "job_desc": "<p>This is an unpaid Internship at KEVAHEALTH Inc as a Project Management Intern for 40 hours per week. In this position, you will report directly to Jyotsna Mehta beginning May 9, 2022.</p>\r\n<p>This is in accordance with the Fair Labor Standards Act ref.</p>\r\n<p>https: //www.dol.gov/s ites/dolgov /fi les/WH D /legacy/fi les/whdfs 71. pdf)</p>\r\n<p>This internship will provide hands-on experience in digital health and you will learn more about the healthcare system and remote monitoring of diseases. Your duties will include supporting marketing, business development activities for KEVA Health and other related projects for the company. Your internship will be ending on August 9,2022.</p>\r\n<p>During your employment, you may become aware of information relating to the business of KEVA Health, including but not limited to client lists, trade secrets, and client details and pricing structures.</p>\r\n<p>Confidential information, including client lists, trade secrets, pricing structures and any and all documents created by you in the course of your employment remain the sole property of KEVA Health. You shall not, either during or after your employment, without the prior consent of the KEVA Health, directly or indirectly divulge to any person or use the confidential information for your own or another's benefit.</p>",
+            "visual_id": "57074",
+            "job_title": "Project Management Intern",
+            "ocr_flag": 0,
+            "job_type": [
+                "Co-op"
+            ],
+            "symp_remote_job": 0,
+            "qualified": "",
+            "jobs_iso_times": {
+                "job_start": "2022-04-27T00:00:00-04:00",
+                "job_end": "2022-04-27T23:59:59-04:00"
+            },
+            "postdate": "Apr 27, 2022",
+            "deadline": "Apr 27, 2022",
+            "test2": "<font color=\"#555555\"><b>J</b></font>",
+            "not_interested": false,
+            "job_location": "Lexington, Massachusetts, United States",
+            "employer_logo": "https://s3.amazonaws.com/symp.csm.usprod/northeastern/files/b02/b0234a0cd31ca261832bafb733232b7b.jpeg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAID3RBESXBCESHUGA%2F20220427%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220427T153119Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Signature=d0945a6f4589ebf5d53aaa1f7dc138e254fe1ee995096da8ef664f2e5223fc40",
+            "favorite": false
+        },
+        {
+            "job_id": "47f7d37c71897d6a814ddcea73ad7524",
+            "name": "Activ Surgical",
+            "blind_flag": 0,
+            "job_desc": "<p>ABOUT ACTIV</p>\r\n<p>Founded in 2017, Activ Surgical is a first-of-its kind digital surgery company focused on improving surgical efficiency, accuracy, patient outcomes and accessibility for both endoscopic and robotically assisted procedures. Activ Surgical&rsquo;s scalable and patent-protected surgical software platform technology is driven by computer vision, artificial intelligence, analytics, and machine learning to enhance a surgeon&rsquo;s intra-operative decision making and reduce unintended and preventable surgical complications.</p>\r\n<p>Activ Surgical is looking for individuals who are interested in shaping the future of healthcare by improving patient outcomes, reducing healthcare costs, and addressing unintended surgical complications.</p>\r\n<p>THE TEAM</p>\r\n<p>You will join a team where everyone&mdash;including you&mdash;is striving to constantly create innovative technology. We are an incredibly supportive team&ndash;we love to pitch in when problems arise and give great peer feedback to help each other grow. We are passionate about lots of things&mdash;artificial intelligence, machine learning, autonomous robotics and great user experience--and we love sharing those passions with each other.</p>\r\n<p>THE OPPORTUNITY</p>\r\n<p>The Software Engineer Co-op will assist in optimizing machine learning (ML) models for specific hardware and use them to create AI powered software applications for delivering real-time insights with low latency.</p>\r\n<p>General responsibilities include:</p>\r\n<p>Technical assistance working within a multidisciplinary software product development team<br />Optimize ML models for real-time deployment<br />Prepare reports/presentations to share results with the technical team<br />&nbsp;</p>\r\n<p>REQUIREMENTS</p>\r\n<p>Experience with C/C++ in both windows and Linux environments. Python knowledge is a plus.<br />Experience with fundamental image processing and computer vision techniques<br />Experience with GPU accelerated libraries (e.g.: TensorRT) and OpenGL<br />Experience with documentation of code and version control (i.e.: git)<br />Must have excellent written and verbal communication skills<br />Undergraduate or graduate student in Computer Science, Engineering, Mathematics/Statistics, or related field</p>",
+            "visual_id": "57046",
+            "job_title": "Software Engineer Co-op",
+            "ocr_flag": 0,
+            "job_type": [
+                "Co-op"
+            ],
+            "symp_remote_job": 0,
+            "qualified": "Not Qualified",
+            "jobs_iso_times": {
+                "job_start": "2022-04-27T00:00:00-04:00",
+                "job_end": "2022-06-30T23:59:59-04:00"
+            },
+            "postdate": "Apr 27, 2022",
+            "deadline": "Jun 30, 2022",
+            "test2": "<font color=\"#555555\"><b>J</b></font>",
+            "not_interested": false,
+            "job_location": "Boston, Massachusetts, United States",
+            "employer_logo": "https://s3.amazonaws.com/symp.csm.usprod/northeastern/files/752/75248028a046270f19eed7e37783eb14.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAID3RBESXBCESHUGA%2F20220427%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220427T100353Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Signature=e2ff1ed13a310c1cf7cb71d31e0aa3694898ccd25ffdd46cca7ffc9e5978abac",
+            "favorite": false
+        },
+        {
+            "job_id": "f268b5a8d5ce6b6bc3ed842654ebf9a7",
+            "name": "Brigham and Women's Hospital",
+            "blind_flag": 0,
+            "job_desc": "<p>Project Description:<br />Our lab is currently developing the next generation of drug delivery systems. These include extended-release and localized delivery of therapeutic agents. These disruptive technologies will impact the lives of many, helping treat chronic illnesses, minimize side effects, and improve patient compliance for long and cumbersome treatment regimens. A wide variety of concepts from materials science, polymer science, bioengineering, chemistry, biology, and physics are utilized to develop novel platform technologies. This position is largely related to designing, prototyping, and testing ingestible and implantable devices used for the delivery of therapeutic agents through the skin and gastrointestinal tract. The work will be performed at Brigham and Women&rsquo;s Hospital, Harvard Medical School and is part of larger collaborations with several&nbsp; external collaborators.&nbsp; &nbsp;&nbsp;</p>\r\n<p>Job Requirements:</p>\r\n<p>&nbsp;</p>\r\n<p>The candidate&nbsp; should&nbsp; be&nbsp; working&nbsp; towards&nbsp; a&nbsp; B.S.&nbsp; or&nbsp; M.S.&nbsp; degree&nbsp; in&nbsp; mechanical engineering,&nbsp; biomedical&nbsp; engineering,&nbsp; or&nbsp; materials&nbsp; science.&nbsp; An&nbsp; ideal&nbsp; candidate&nbsp; will have research&nbsp; experience&nbsp; in&nbsp; biomedical&nbsp; engineering&nbsp; as&nbsp; well&nbsp; as&nbsp; hands-on experience/rapid prototyping&nbsp; skills,&nbsp; but&nbsp; training&nbsp; to&nbsp; gain&nbsp; further&nbsp; skills&nbsp; will&nbsp; be available.&nbsp; Candidates&nbsp; with relevant&nbsp; experience&nbsp; in&nbsp; any&nbsp; of&nbsp; the&nbsp; following&nbsp; areas&nbsp; are encouraged&nbsp; to&nbsp; apply:</p>\r\n<p>&nbsp;</p>\r\n<p>●&nbsp; CAD/CAM&nbsp; (OnShape,&nbsp; Fusion360)</p>\r\n<p>●&nbsp; Biomedical&nbsp; device&nbsp; design&nbsp; and&nbsp; development</p>\r\n<p>●&nbsp; Material&nbsp; characterization (biomaterials and plastics, experience with Instron testing machines a plus)</p>\r\n<p>●&nbsp; Additive&nbsp; manufacturing/3D&nbsp; Printing&nbsp; (FDM&nbsp; and&nbsp; SLA)</p>\r\n<p>●&nbsp; Subtractive&nbsp; manufacturing&nbsp; (manual&nbsp; and&nbsp; CNC&nbsp; machining)</p>\r\n<p>●&nbsp; Plastic&nbsp; molding&nbsp; (extrusion,&nbsp; injection&nbsp; molding,&nbsp; and&nbsp; compression&nbsp; molding)</p>\r\n<p>●&nbsp; Polymer&nbsp; science/polymer&nbsp; formulation</p>\r\n<p>●&nbsp; Drug&nbsp; delivery/pharmaceutical&nbsp; sciences</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Candidate&nbsp; must&nbsp; have&nbsp; self-motivation&nbsp; and&nbsp; willingness&nbsp; to&nbsp; learn&nbsp; new&nbsp; tools&nbsp; and techniques; strong&nbsp; organizational,&nbsp; interpersonal,&nbsp; and&nbsp; communication&nbsp; skills;&nbsp; ability to&nbsp; work independently&nbsp; and&nbsp; as&nbsp; part&nbsp; of&nbsp; a&nbsp; team;&nbsp; comfort&nbsp; summarizing&nbsp; and&nbsp; reporting results&nbsp; to interdisciplinary&nbsp; researchers;&nbsp; commitment&nbsp; to&nbsp; exceeding&nbsp; standards&nbsp; and producing&nbsp; accurate, high&nbsp; quality&nbsp; work;&nbsp; meticulous&nbsp; attention&nbsp; to&nbsp; detail;&nbsp; practiced documentation&nbsp; skills;&nbsp; and&nbsp; ability to&nbsp; follow&nbsp; safety&nbsp; procedures&nbsp; and&nbsp; maintain&nbsp; a&nbsp; safe work&nbsp; environment.&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Collaborative Environment:</p>\r\n<p>The Traverso laboratories are research labs at BWH/Harvard Medical School focused on developing new technologies at the interface of biotechnology and materials science.&nbsp; A major emphasis of the lab is the study and development of polymers to deliver drugs continuously at controlled rates for prolonged periods of time.</p>",
+            "visual_id": "57088",
+            "job_title": "Traverso Laboratory - Medical Devices Co-op",
+            "ocr_flag": 0,
+            "job_type": [
+                "Co-op"
+            ],
+            "symp_remote_job": 0,
+            "qualified": "",
+            "jobs_iso_times": {
+                "job_start": "2022-04-27T00:00:00-04:00",
+                "job_end": "2022-06-30T23:59:59-04:00"
+            },
+            "postdate": "Apr 27, 2022",
+            "deadline": "Jun 30, 2022",
+            "test2": "<font color=\"#555555\"><b>J</b></font>",
+            "not_interested": false,
+            "job_location": "Cambridge, Massachusetts, United States",
+            "employer_logo": "",
+            "favorite": false
+        },
+        {
+            "job_id": "25facdce3ef6564325d29f5efffeba50",
+            "name": "Brigham and Women's Hospital",
+            "blind_flag": 0,
+            "job_desc": "<p><strong>About this unit:</strong> The Medical Assistant (MA) is an integral member of the healthcare team and is accountable for patient care as assigned<br />by a licensed independent provider (LIP: MD, NP, PA), a Licensed Practical Nurse (LPN) or a Registered Nurse (RN). The<br />MA participates in the direct and indirect care of patients, health maintenance, patient instruction, collaborative planning<br />and rehabilitation within scope of practice and consistent with his/her education and training. The Medical Assistant may<br />be present in secure medication storage areas and is allowed incidental access to medications. Developing relationships<br />with patients, families and colleagues, the MA functions as an interdisciplinary team member who provides quality patient<br />care and contributes toward the attainment of important goals for the patient, the practice and the organization.</p>\r\n<p><strong>PRINCIPAL DUTIES AND RESPONSIBILITIES:</strong><br />Job duties and responsibilities may vary by department (see addendum A for more detail)<br />Clinical Duties and Responsibilities:<br />- Demonstrates true engagement and enthusiasm to contribute toward the care delivery needs for patients and families.<br />- Promotes an inclusive environment supportive of patient and family centered care for a diverse community.<br />- Accepts assignments for patient care within the scope of his/her preparation and within current standards of practice.</p>\r\n<p>&nbsp;The nursing/co-op students will be exposed to many healthcare disciplines and good communication skills are a MUST!</p>\r\n<p><strong>General requirements:</strong> CPR or BLS Currently enrolled in BSN / Healthcare program</p>\r\n<p><strong>Hiring requirements:</strong> Professional references Official college transcript Completion of two background checks I-9 form (used for verifying the identity &amp; employment authorization of individuals hired for employment in the US)</p>\r\n<p><strong>Public transportation from NU:</strong> Green line T - Outbound towards Health Street (3 stops) to Brigham Circle #39 Bus - Outbound towards Forest Hills (4 stops) to 677 Huntington Avenue LMA Shuttle - Ruggles to 70 Francis Street Shift/hours requirements: The schedule is 8am to 5:00pm rotating shift.</p>\r\n<p>Compensation: Minimum $15.00/hour</p>\r\n<p>GREAT CO-OP EXPERIENCE WITH STAFF THAT ENJOY TEACHING!</p>\r\n<p>May 12, 2021</p>",
+            "visual_id": "56885",
+            "job_title": "Medical Assistant - BWH Ambulatory Infusion Clinic",
+            "ocr_flag": 0,
+            "job_type": [
+                "Co-op"
+            ],
+            "symp_remote_job": 0,
+            "qualified": "Not Qualified",
+            "jobs_iso_times": {
+                "job_start": "2022-04-26T00:00:00-04:00",
+                "job_end": "2022-05-27T23:59:59-04:00"
+            },
+            "postdate": "Apr 26, 2022",
+            "deadline": "May 27, 2022",
+            "test2": "<font color=\"#555555\"><b>J</b></font>",
+            "not_interested": false,
+            "job_location": "Boston, Massachusetts, United States",
+            "employer_logo": "",
+            "favorite": false
+        },
+        {
+            "job_id": "6aa5b6ac5f527557cb5d928b436e34f2",
+            "name": "Cambridge Health Alliance",
+            "blind_flag": 0,
+            "job_desc": "<p>CHA Performance Improvement Internship-- (unpaid- Summer/ Fall 2022)</p>\r\n<p>&nbsp;</p>\r\n<p>About Cambridge Health Alliance</p>\r\n<p>Cambridge Health Alliance (CHA) is a vibrant, innovative health system dedicated to providing essential services to all members of the community. With over 140,000 patients in Cambridge, Somerville, and Boston&rsquo;s Metro North region, CHA is a local provider of choice for primary care, specialty care, emergency services, hospital care, maternity care, and behavioral health.</p>\r\n<p>CHA is proud of providing a vital safety net for underserved populations facing barriers to care. It operates the nationally accredited Cambridge Public Health Department.</p>\r\n<p>&nbsp;</p>\r\n<p>Performance Improvement at CHA</p>\r\n<p>As part of the Department of Quality and Patient Safety, the Performance Improvement (PI) team partners with senior leadership and engages multidisciplinary teams to develop a shared vision and implement system-wide changes. PI is engaged throughout the project cycle from inception to implementation, monitoring and evaluation integrating evidence-based decision making.</p>\r\n<p>&nbsp;</p>\r\n<p>Internships/Practicums (UNPAID)</p>\r\n<p>CHA Performance Improvement is looking for interns to join the team to provide operational and analytics support for various department level and system-level improvement initiatives. Projects involve departments across the CHA system including: Inpatient and Ambulatory Services, Human Resources, Finance, IT and Supply Chain. The goal is to improve efficiency, identify waste, and integrate evidence-based decision making using PI frameworks such as Lean.</p>\r\n<p>&nbsp;</p>\r\n<p>Department:&nbsp;Quality and Patient Safety, Performance Improvement</p>\r\n<p>Position:&nbsp;Performance Improvement Intern</p>\r\n<p>Openings:&nbsp;3-4 positions (Summer 2022, Fall 2022)</p>\r\n<p>Duration:&nbsp;3-4 months (Spring 2022, Fall 2022)</p>\r\n<p>Shift:&nbsp;day shift, regular business hours (8am-5pm)</p>\r\n<p>Time commitment:&nbsp;16-24 hours/week depending on availability. At least 16 of these hours must be on Monday through Friday between 8am and 5pm.</p>\r\n<p>&nbsp;</p>\r\n<p>Job Duties:</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Provide operational and analytical support for PI projects in different phases from development, analysis, monitoring, to implementation</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Apply improvement tools and methodologies such as: gemba walks, fishbone diagrams, impact/effort matrix, process maps, decision algorithms</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Collect, clean, organize, analyze, interpret and present data to identify and develop trends and their implications; provide proactive analysis to identify opportunities for process improvement</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Summarize findings for internal and external dissemination; opportunities for presentation and involvement in meetings and decision-making</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Conduct benchmarking and literature reviews to find best practices, support findings, and further goals of implementation</p>\r\n<p>&nbsp;</p>\r\n<p>You will be a good fit if you:</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Have a willingness to learn LEAN Six-sigma basic concepts and tools</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Have strong analytical skills, including intermediate or advanced skills with Excel, Word, Google Docs, and Google Sheets (i.e. can you create pivot tables?)</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Have experience in conducting data analysis in research or operational projects</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Have excellent verbal and written communication skills and are able to adapt communication approach to different stakeholders</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Are excited by the challenges of working with an entrepreneurial team</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Are proactive, self-sufficient, and can manage a variety of tasks under deadlines</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Are highly organized, diligent about prioritizing tasks and deliverables in a fast-paced, data-driven, professional environment</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Are a skilled problem-solver and tackle issues systematically</p>\r\n<p>&nbsp;</p>\r\n<p>By the end of the internship, you will gain:</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A Lean White Belt from CHA&acute;s Quality &amp; Safety department</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; An informed view of CHA&rsquo;s comprehensive health system and provider network, core relationships between healthcare stakeholders, and high priority health system operational functions</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Insight as to how Lean management tools apply to real world projects</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sharpened data analysis skills and an ability to interpret results to inform data-driven decisions; enhanced ability to present data in a visually appealing way and customize it to different audiences</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Techniques to facilitate cross-functional workgroups to drive decision-making</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The ability to understand and capture existing workflows and synthesize processes; develop future state workflows integrating input from a multi-disciplinary team</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The ability to identify and engage key stakeholders and the appropriate core team, a strengthened ability to develop plans and move projects forward from project planning, to implementation, to monitoring and evaluation</p>",
+            "visual_id": "56874",
+            "job_title": "Performance Improvement Intern (Unpaid) - Summer 22",
+            "ocr_flag": 0,
+            "job_type": [
+                "Co-op"
+            ],
+            "symp_remote_job": 0,
+            "qualified": "",
+            "jobs_iso_times": {
+                "job_start": "2022-04-26T00:00:00-04:00",
+                "job_end": "2022-08-31T23:59:59-04:00"
+            },
+            "postdate": "Apr 26, 2022",
+            "deadline": "Aug 31, 2022",
+            "test2": "<font color=\"#555555\"><b>J</b></font>",
+            "not_interested": false,
+            "job_location": "Cambridge, Massachusetts, United States",
+            "employer_logo": "https://s3.amazonaws.com/symp.csm.usprod/northeastern/files/c31/c315a1de7003f234db5e9a79605dc950.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAID3RBESXBCESHUGA%2F20220427%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220427T072530Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Signature=b985ca51690d1bb04ac02d87e64126afc911afe2d5ad8acef3699f1fb60ab956",
+            "favorite": false
+        },
+        {
+            "job_id": "524f32b35bf0ed3a155d30c7df8c425a",
+            "name": "Cambridge Health Alliance",
+            "blind_flag": 0,
+            "job_desc": "<p>CHA Performance Improvement Internship-- (unpaid- Summer/ Fall 2022)</p>\r\n<p>&nbsp;</p>\r\n<p>About Cambridge Health Alliance</p>\r\n<p>Cambridge Health Alliance (CHA) is a vibrant, innovative health system dedicated to providing essential services to all members of the community. With over 140,000 patients in Cambridge, Somerville, and Boston&rsquo;s Metro North region, CHA is a local provider of choice for primary care, specialty care, emergency services, hospital care, maternity care, and behavioral health.</p>\r\n<p>CHA is proud of providing a vital safety net for underserved populations facing barriers to care. It operates the nationally accredited Cambridge Public Health Department.</p>\r\n<p>&nbsp;</p>\r\n<p>Performance Improvement at CHA</p>\r\n<p>As part of the Department of Quality and Patient Safety, the Performance Improvement (PI) team partners with senior leadership and engages multidisciplinary teams to develop a shared vision and implement system-wide changes. PI is engaged throughout the project cycle from inception to implementation, monitoring and evaluation integrating evidence-based decision making.</p>\r\n<p>&nbsp;</p>\r\n<p>Internships/Practicums (UNPAID)</p>\r\n<p>CHA Performance Improvement is looking for interns to join the team to provide operational and analytics support for various department level and system-level improvement initiatives. Projects involve departments across the CHA system including: Inpatient and Ambulatory Services, Human Resources, Finance, IT and Supply Chain. The goal is to improve efficiency, identify waste, and integrate evidence-based decision making using PI frameworks such as Lean.</p>\r\n<p>&nbsp;</p>\r\n<p>Department:&nbsp;Quality and Patient Safety, Performance Improvement</p>\r\n<p>Position:&nbsp;Performance Improvement Intern</p>\r\n<p>Openings:&nbsp;3-4 positions (Summer 2022, Fall 2022)</p>\r\n<p>Duration:&nbsp;3-4 months (Spring 2022, Fall 2022)</p>\r\n<p>Shift:&nbsp;day shift, regular business hours (8am-5pm)</p>\r\n<p>Time commitment:&nbsp;16-24 hours/week depending on availability. At least 16 of these hours must be on Monday through Friday between 8am and 5pm.</p>\r\n<p>&nbsp;</p>\r\n<p>Job Duties:</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Provide operational and analytical support for PI projects in different phases from development, analysis, monitoring, to implementation</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Apply improvement tools and methodologies such as: gemba walks, fishbone diagrams, impact/effort matrix, process maps, decision algorithms</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Collect, clean, organize, analyze, interpret and present data to identify and develop trends and their implications; provide proactive analysis to identify opportunities for process improvement</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Summarize findings for internal and external dissemination; opportunities for presentation and involvement in meetings and decision-making</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Conduct benchmarking and literature reviews to find best practices, support findings, and further goals of implementation</p>\r\n<p>&nbsp;</p>\r\n<p>You will be a good fit if you:</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Have a willingness to learn LEAN Six-sigma basic concepts and tools</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Have strong analytical skills, including intermediate or advanced skills with Excel, Word, Google Docs, and Google Sheets (i.e. can you create pivot tables?)</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Have experience in conducting data analysis in research or operational projects</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Have excellent verbal and written communication skills and are able to adapt communication approach to different stakeholders</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Are excited by the challenges of working with an entrepreneurial team</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Are proactive, self-sufficient, and can manage a variety of tasks under deadlines</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Are highly organized, diligent about prioritizing tasks and deliverables in a fast-paced, data-driven, professional environment</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Are a skilled problem-solver and tackle issues systematically</p>\r\n<p>&nbsp;</p>\r\n<p>By the end of the internship, you will gain:</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A Lean White Belt from CHA&acute;s Quality &amp; Safety department</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; An informed view of CHA&rsquo;s comprehensive health system and provider network, core relationships between healthcare stakeholders, and high priority health system operational functions</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Insight as to how Lean management tools apply to real world projects</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sharpened data analysis skills and an ability to interpret results to inform data-driven decisions; enhanced ability to present data in a visually appealing way and customize it to different audiences</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Techniques to facilitate cross-functional workgroups to drive decision-making</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The ability to understand and capture existing workflows and synthesize processes; develop future state workflows integrating input from a multi-disciplinary team</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The ability to identify and engage key stakeholders and the appropriate core team, a strengthened ability to develop plans and move projects forward from project planning, to implementation, to monitoring and evaluation</p>",
+            "visual_id": "56876",
+            "job_title": "Performance Improvement Intern (Unpaid) Fall 22",
+            "ocr_flag": 0,
+            "job_type": [
+                "Co-op"
+            ],
+            "symp_remote_job": 0,
+            "qualified": "",
+            "jobs_iso_times": {
+                "job_start": "2022-04-26T00:00:00-04:00",
+                "job_end": "2022-08-31T23:59:59-04:00"
+            },
+            "postdate": "Apr 26, 2022",
+            "deadline": "Aug 31, 2022",
+            "test2": "<font color=\"#555555\"><b>J</b></font>",
+            "not_interested": false,
+            "job_location": "Cambridge, Massachusetts, United States",
+            "employer_logo": "https://s3.amazonaws.com/symp.csm.usprod/northeastern/files/c31/c315a1de7003f234db5e9a79605dc950.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAID3RBESXBCESHUGA%2F20220427%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220427T072530Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Signature=b985ca51690d1bb04ac02d87e64126afc911afe2d5ad8acef3699f1fb60ab956",
+            "favorite": false
+        },
+        {
+            "job_id": "754d800aae5b32c4bfeb8ca7ef7d137a",
+            "name": "Babyscripts",
+            "blind_flag": 0,
+            "job_desc": "<p>Babyscripts is a digital health organization with the goal of Better Pregnancies for All. We do this through our mobile app and connected devices, which support moms throughout pregnancy while collecting, analyzing, and reporting clinical and wellbeing data to their doctors. Our Product Marketing team is seeking a summer intern to help connect the dots between Product, Marketing, Sales, and our customers.</p>\r\n<p>This internship is an exciting opportunity to work on a multi-faceted position spanning multiple domains within the organization. Product Marketing is a new function within Babyscripts that works closely with the Product team to deeply understand the product and create materials to bridge the gap between our product&rsquo;s value and our customer&rsquo;s needs.</p>\r\n<p>Visit the full job description here: https://babyscripts.bamboohr.com/jobs/view.php?id=95</p>\r\n<p></p>\r\n<p>Applicant requirements:</p>\r\n<ul>\r\n<li>Personal interest in healthcare, maternal health, and health equity</li>\r\n<li>Past ownership of research projects (both academic and professional projects are acceptable)</li>\r\n<li>Experience with office software, particularly Google Suite</li>\r\n<li>Past work experience</li>\r\n<li>Current enrollment in undergraduate or graduate degree program with expected graduation in spring 2023</li>\r\n</ul>",
+            "visual_id": "56833",
+            "job_title": "Product Marketing Summer Intern",
+            "ocr_flag": 0,
+            "job_type": [
+                "Internship"
+            ],
+            "symp_remote_job": 0,
+            "qualified": "",
+            "jobs_iso_times": {
+                "job_start": "2022-04-25T00:00:00-04:00",
+                "job_end": "2022-05-06T23:59:59-04:00"
+            },
+            "postdate": "Apr 25, 2022",
+            "deadline": "May 06, 2022",
+            "test2": "<font color=\"#555555\"><b>J</b></font>",
+            "not_interested": false,
+            "job_location": "Nationwide, United States",
+            "employer_logo": "https://s3.amazonaws.com/symp.csm.usprod/northeastern/files/a83/a8383176890c5d351ac53536f0b5c8fa.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAID3RBESXBCESHUGA%2F20220427%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220427T162333Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Signature=141824b663d3bcdf91c056f6eff4bb525d5e8528c3c60ad6dc1f6f5f4bf3acbe",
+            "favorite": false
+        },
+        {
+            "job_id": "9dd8d86ed564790bda7422367614f162",
+            "name": "Power of Patients",
+            "blind_flag": 0,
+            "job_desc": "<p>Power of Patients is a digital health tech company and has created a Traumatic Brain Injury (TBI) dashboard for patients and caregivers.</p>\r\n<p>Power of Patients is looking for a Predictive Modeling Co-op that can build and deploy modern analytics solutions to uncover insights, improve decision making, and enable digital transformation strategies. We are looking for high performers who are self-motivated and ready to collaborate and engage with our team. Typical backgrounds include a depth of experience in cloud analytics solutions, overseeing aspects of technical delivery, and the ability to work independently.</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; We are looking to find someone with knowledge and experience in Machine Learning to continue work being done with our partner MITRE and build an extraction tool for modeling and sentiment analysis from our existing data warehouse. The M/L tool will need to identify types of injuries within certain groups of patients from structured and unstructured data.&nbsp;Injury sub-types are not limited to the structured data we collect but may be influenced by underserved population lifestyles.</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; We are specifically interested in developing models that relate to the Community Health Center (CHC) populations which lack adequate care because likely due to geographic location, religion, sexual orientation, gender identity, racial and/or ethnicity.</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; An example of one underserved population of interest is to identify signals from narratives in victims of domestic violence (DV). Fear of retribution, stalking and bodily harm often prevent this sub-population from correctly [honestly] classifying their injury category.</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A second project will be to develop impact or severity scores related to injury types. Specifically, we are interested in exploring partial derivative models to calculate a quantifiable severity score based upon public datasets available for fall, &nbsp;collision data and other impact datasets.</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Demonstrate strong oral and written communication skills, with the ability to communicate technical topics to management and non-technical audiences</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Experience creating NPL models with sentiment analysis</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Python: 6+ months</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Experience programming in SQL</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Understand Data Architecture and Table Structure with familiarity to linking tables</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ability to analyze and visualize data</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Experience in creating design/technical documentation.</p>\r\n<p>&nbsp;</p>\r\n<p>A portfolio of previous work is recommended</p>",
+            "visual_id": "56735",
+            "job_title": "Predictive Modeling Co-op",
+            "ocr_flag": 0,
+            "job_type": [
+                "Co-op"
+            ],
+            "symp_remote_job": 0,
+            "qualified": "",
+            "jobs_iso_times": {
+                "job_start": "2022-04-22T00:00:00-04:00",
+                "job_end": "2022-05-31T23:59:59-04:00"
+            },
+            "postdate": "Apr 22, 2022",
+            "deadline": "May 31, 2022",
+            "test2": "<font color=\"#555555\"><b>J</b></font>",
+            "not_interested": false,
+            "job_location": "Portland, Maine, United States",
+            "employer_logo": "https://s3.amazonaws.com/symp.csm.usprod/northeastern/files/ed9/ed9b5726c73fc223941b9e6921793da2.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAID3RBESXBCESHUGA%2F20220427%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220427T054735Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Signature=043989506d1986024eea8f62df7f630df7635a8b2ea69a8a1701ca0a5d825356",
+            "favorite": false
+        },
+        {
+            "job_id": "beda66dcef38fe117092ddbf6f477e66",
+            "name": "Arbour HRI Hospital",
+            "blind_flag": 0,
+            "job_desc": "<p>he opportunity to make a difference that drives you. It's taking the time to really listen to a patient so you can do your best to help. It's the camaraderie among professionals who push you further than you ever thought you could go. You are physically and mentally fit and have what it takes to care for patients of all ages. You are as equally diligent and attentive during quiet times as you are a in a crisis situation. You are a highly empathetic individual with a high level of emotional and social intelligence. Your satisfaction comes from a patient's noticeable progress or a sincere word of thanks from your patient's family. It's these experiences that solidify your dedication to helping others.</p>\r\n<p>As a Mental Health Worker, you will:</p>\r\n<p>- Monitor patient safety on the inpatient psychiatric units</p>\r\n<p>- Assist nursing staff with patient treatment procedures</p>\r\n<p>- Ensure a safe and therapeutic environment</p>\r\n<p>- Assist patients with activities of daily living</p>\r\n<p>- Provide routine patient care as required in a psychiatric environment</p>\r\n<p>- Document and communicate unusual or erratic changes in client behaviors</p>\r\n<p>- Assist with patient groups and activities</p>\r\n<p></p>\r\n<p>HRI Hospital is 62-bed psychiatric facility with adult inpatient services and several partial hospitalization programs. We are part of the largest private mental health system in Massachusetts and can therefore provide competitive salaries, benefits, and opportunities for growth and development. At the same time, the smaller size of our facility allows us to provide personalized attention and training to all our employees. Employees are part of a multi-disciplinary team of dynamic professionals providing high quality care to a diverse inpatient and outpatient group of individuals. We are located in Brookline ? right near Boston University and Coolidge Corner ? and provide easy access to public transportation and free parking. Employees are our most valued asset and we encourage qualified individuals to apply.</p>",
+            "visual_id": "56758",
+            "job_title": "Inpatient Mental Health Worker ",
+            "ocr_flag": 0,
+            "job_type": [
+                "Co-op"
+            ],
+            "symp_remote_job": 0,
+            "qualified": "",
+            "jobs_iso_times": {
+                "job_start": "2022-04-22T00:00:00-04:00",
+                "job_end": "2022-06-24T23:59:59-04:00"
+            },
+            "postdate": "Apr 22, 2022",
+            "deadline": "Jun 24, 2022",
+            "test2": "<font color=\"#555555\"><b>J</b></font>",
+            "not_interested": false,
+            "job_location": "Brookline, Massachusetts, United States",
+            "employer_logo": "https://s3.amazonaws.com/symp.csm.usprod/northeastern/files/a8d/a8d4d97379a10a97b2eb0309c9eb287e.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAID3RBESXBCESHUGA%2F20220427%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220427T055649Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Signature=aacdcda52ad8716b95170fe25892268c1e2515833b896834674f8b19ce537716",
+            "favorite": false
+        },
+        {
+            "job_id": "9cbf6b1b17a4f9979fae9124ce7e1408",
+            "name": "Lighthouse Lab Services",
+            "blind_flag": 0,
+            "job_desc": "<p>As a Staff Accountant - Part Time, you will work directly with all members of the accounting team including the VP of Finance and Controller to assist in maintaining financial records, documenting supporting schedules, preparing reports, harvesting and analyzing data and reconciling account balances. You will also utilize the company&rsquo;s accounting software programs to process business transactions, including accounts payable and receivable, as well as disbursements, expense vouchers and receipts.&nbsp;</p>\r\n<p>Success in this role will be demonstrated by adding value through creating and improving processes and ensuring the Company&rsquo;s daily accounting functions run accurately and timely.</p>\r\n<p>Expertise and Skills:</p>\r\n<p>Strong critical thinking, fast learner, reasoning and communication skills<br />Proficiency in Microsoft Excel<br />Ability to work as part of a team and own certain accounting functions to demonstrate growth and development<br />Familiarity with accounting concepts, processes, and procedures</p>\r\n<p>Your Responsibilities:</p>\r\n<p>Entering key data of financial transactions in appropriate database or platform<br />Preparing accounts payable and disbursements<br />Preparing billings and invoices <br />Preparing bank deposits, general ledger postings, and statements<br />Managing ordering, logistics and expense reimbursement process<br />Assisting with month-end, quarter-end and year-end closing processes.<br />Maintaining vendor, customer and other files<br />Answering accounting and financial questions by interpreting data<br />Assist with special projects and performing other duties as required</p>",
+            "visual_id": "56705",
+            "job_title": "Staff Accountant - Part Time",
+            "ocr_flag": 0,
+            "job_type": [
+                "Full Time / Part Time"
+            ],
+            "symp_remote_job": 0,
+            "qualified": "",
+            "jobs_iso_times": {
+                "job_start": "2022-04-22T00:00:00-04:00",
+                "job_end": "2022-07-31T23:59:59-04:00"
+            },
+            "postdate": "Apr 22, 2022",
+            "deadline": "Jul 31, 2022",
+            "test2": "<font color=\"#555555\"><b>J</b></font>",
+            "not_interested": false,
+            "job_location": "Charlotte, North Carolina, United States",
+            "employer_logo": "https://s3.amazonaws.com/symp.csm.usprod/northeastern/files/62b/62b48bdcd008f6f2d80423ee1bdf498e.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAID3RBESXBCESHUGA%2F20220427%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220427T155024Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Signature=1ef29a3d390145c65f66febfbbbec01142d3ca01b1d5a6cfa09ae6d7eb8a28e7",
+            "favorite": false
+        },
+        {
+            "job_id": "346c9174941e8639bee20db739d9694e",
+            "name": "The Massachusetts Eye and Ear Infirmary",
+            "blind_flag": 0,
+            "job_desc": "<p><strong>Otolaryngology Clinics</strong></p>\r\n<p><strong></strong></p>\r\n<ul>\r\n<ul>\r\n<li>Review daily schedule of patients making sure that all the appropriate preparations are in place to facilitate patient flow.</li>\r\n</ul>\r\n</ul>\r\n<p></p>\r\n<ul>\r\n<ul>\r\n<li>Currently with EPIC, the MA needs to go into CARE EVERYWHERE and update the record from LMR and reconcile the medications.</li>\r\n</ul>\r\n</ul>\r\n<p></p>\r\n<ul>\r\n<ul>\r\n<li>When rooming a patient, prepare template per physician requirements.</li>\r\n</ul>\r\n</ul>\r\n<p></p>\r\n<ul>\r\n<ul>\r\n<li>Review records for completeness of medical information needed for exam, i.e. reports of cultures, biopsies, x-ray results, and other laboratory findings.</li>\r\n</ul>\r\n</ul>\r\n<p></p>\r\n<ul>\r\n<ul>\r\n<li>Prepare patient for exam, treatment, and/or procedure. Bring patient into exam room and document in the Rooming section of EPIC the chief complaint, vital signs if required, medications, allergies, problem list, smoking status if not documented. NOTE: Some offices ask Past Medical history and Past Surgical history, and these items also should be documented.</li>\r\n</ul>\r\n</ul>\r\n<p></p>\r\n<ul>\r\n<ul>\r\n<li>Assist physician with in-office procedures, including set-up of supplies, instruments, and equipment.</li>\r\n</ul>\r\n</ul>\r\n<p></p>\r\n<ul>\r\n<ul>\r\n<li>Responsible for cleaning and sterilization of all equipment according to infection control standards.</li>\r\n</ul>\r\n</ul>\r\n<p></p>\r\n<ul>\r\n<ul>\r\n<li>Clean and sterilize equipment instruments, including scopes, and document on daily log sheets per MEE policy and standards. Ensure all instrumentation is fully functional and notify Manager when problems are identified.</li>\r\n</ul>\r\n</ul>\r\n<p></p>\r\n<ul>\r\n<ul>\r\n<li>Responsible for ordering medications from the pharmacy for each clinic. Maintain an inventory log sheet of clinic medications. Responsible for labeling expiration dates on medications.</li>\r\n</ul>\r\n</ul>\r\n<p></p>\r\n<ul>\r\n<ul>\r\n<li>Follow procedure to appropriately and safely handle and transport all medications.</li>\r\n</ul>\r\n</ul>\r\n<p></p>\r\n<ul>\r\n<ul>\r\n<li>Monitor the level of supplies in the clinics and orders supplies as needed to restock each exam room.</li>\r\n</ul>\r\n</ul>\r\n<p></p>\r\n<ul>\r\n<ul>\r\n<li>Replace needle boxes when &frac34;-filled and beads in the bead sterilizer every six months.</li>\r\n</ul>\r\n</ul>\r\n<p></p>\r\n<ul>\r\n<ul>\r\n<li>Maintain knowledge in the operation and functionality of all equipment used in outpatient exam area.&nbsp; Report all equipment problems/issues in accordance with established MEEI and departmental policies.</li>\r\n</ul>\r\n</ul>\r\n<p></p>\r\n<ul>\r\n<ul>\r\n<li>Responsible for light housekeeping; i.e. cleanliness of equipment and cabinets in exam and procedure rooms.</li>\r\n</ul>\r\n</ul>\r\n<p></p>\r\n<ul>\r\n<ul>\r\n<li>Provide instructions and teaching tools for patients and families as needed.</li>\r\n</ul>\r\n</ul>\r\n<p></p>\r\n<ul>\r\n<ul>\r\n<li>Work collaboratively with departmental and MEE staff to provide quality patient care.</li>\r\n</ul>\r\n</ul>\r\n<p></p>\r\n<ul>\r\n<ul>\r\n<li>Participate in quality improvement activities and initiatives, as assigned by Manager.</li>\r\n</ul>\r\n</ul>\r\n<p></p>\r\n<ul>\r\n<ul>\r\n<li>Participate in all mandatory education sessions on an annual basis. Review, update and demonstrate knowledge of basic life support policies and procedures annually.</li>\r\n</ul>\r\n</ul>\r\n<p></p>\r\n<ul>\r\n<ul>\r\n<li>Maintain confidentiality of all patient information.</li>\r\n</ul>\r\n</ul>\r\n<p></p>\r\n<ul>\r\n<ul>\r\n<li>Participate in other projects and duties as assigned.</li>\r\n</ul>\r\n</ul>\r\n<p></p>",
+            "visual_id": "56606",
+            "job_title": "Medical Assistant",
+            "ocr_flag": 0,
+            "job_type": [
+                "Co-op"
+            ],
+            "symp_remote_job": 0,
+            "qualified": "Not Qualified",
+            "jobs_iso_times": {
+                "job_start": "2022-04-21T00:00:00-04:00",
+                "job_end": "2022-06-30T23:59:59-04:00"
+            },
+            "postdate": "Apr 21, 2022",
+            "deadline": "Jun 30, 2022",
+            "test2": "<font color=\"#555555\"><b>J</b></font>",
+            "not_interested": false,
+            "job_location": "Boston, Massachusetts, United States",
+            "employer_logo": "https://s3.amazonaws.com/symp.csm.usprod/northeastern/files/8f2/8f2a7f9fd48fc4903b0cb7257b228fa4.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAID3RBESXBCESHUGA%2F20220427%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220427T102952Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Signature=5a8c4f11bbb1a0a0dbe312f915009bf12aca7501c3059193234fe6cabf66cc83",
+            "favorite": false
+        },
+        {
+            "job_id": "7bc8ee1b12f9e9cc418fb09d5aecc178",
+            "name": "Brigham and Women's Hospital",
+            "blind_flag": 0,
+            "job_desc": "<p>The Focused Ultrasound Laboratory at Brigham and Women&rsquo;s Hospital is seeking a talented and motivated recent graduate for a 1-year Technical Research Assistant position.</p>\r\n<p>&nbsp;</p>\r\n<p>We are seeking a candidate to join an on-going research project that is investigating targeted delivery of therapies to the brain for the treatment of genetic neurological disorders. We use the technology of focused ultrasound to deliver drugs and gene therapies across the blood-brain barrier that cannot normally reach the brain. This opportunity is ideal for an individual interested in pursuing a career in medicine, biomedical engineering, neuroscience, biology, or a related subject area.</p>\r\n<p>&nbsp;</p>\r\n<p>PRINCIPAL DUTIES AND RESPONSIBILITIES:</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Help conduct experiments in mice</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Perform post-mortem tissue processing and analysis</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Prepare summaries of results</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Conduct literature reviews</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; All other duties, as assigned.</p>\r\n<p>&nbsp;</p>\r\n<p>QUALIFICATIONS:</p>\r\n<p>BS in Physics, Bioengineering, Biology, Neuroscience or related discipline.<br />Strong communication and interpersonal skills. <br />Technical proficiency in Microsoft Word, Excel, and PowerPoint.<br />Previous research experienced is preferred.</p>",
+            "visual_id": "56626",
+            "job_title": "Research Assistant",
+            "ocr_flag": 0,
+            "job_type": [
+                "Full Time / Part Time"
+            ],
+            "symp_remote_job": 0,
+            "qualified": "",
+            "jobs_iso_times": {
+                "job_start": "2022-04-21T00:00:00-04:00",
+                "job_end": "2022-08-31T23:59:59-04:00"
+            },
+            "postdate": "Apr 21, 2022",
+            "deadline": "Aug 31, 2022",
+            "test2": "<font color=\"#555555\"><b>J</b></font>",
+            "not_interested": false,
+            "job_location": "Boston, Massachusetts, United States",
+            "employer_logo": "",
+            "favorite": false
+        },
+        {
+            "job_id": "ad28690888c3f83edb453ebfb68f12b3",
+            "name": "Beth Israel Deaconess Healthcare",
+            "blind_flag": 0,
+            "job_desc": "<p>Perform Medical Assistant and Practice Assistant related duties, including:</p>\r\n<ul>\r\n<li>Greet patients, perform check in, registration, scheduling, verification of demographic information. Collect co-payments, schedule, reschedule, and cancel appointments. Prepare and maintain medical records.</li>\r\n<li>Serve as a communication resources by taking complete and accurate information from patients in person and by phone, prioritizing and communicating the information to providers.</li>\r\n<li>Greet patients and escort to exam rooms.&nbsp; Obtain vitals, weight, blood pressure, pulse, and temperature.&nbsp;</li>\r\n<li>Provide patients with relevant instructions for specific tests and procedures.</li>\r\n<li>Assist with procuring medical records.&nbsp; Ensure patient records and relevant documents filed in the record have appropriate patient identification.&nbsp; Adds new medications to patient record in EMR system.</li>\r\n<li>Ensure that equipment and supplies necessary to carry out patient care activities are available and usable and the environment is clean and organized.&nbsp; Cleans rooms after patient usage and ensure appropriate disposal of contaminated materials.&nbsp;</li>\r\n</ul>",
+            "visual_id": "56540",
+            "job_title": "Medical Assistant-Practice Assistant",
+            "ocr_flag": 0,
+            "job_type": [
+                "Co-op"
+            ],
+            "symp_remote_job": 0,
+            "qualified": "Not Qualified",
+            "jobs_iso_times": {
+                "job_start": "2022-04-21T00:00:00-04:00",
+                "job_end": "2023-06-30T23:59:59-04:00"
+            },
+            "postdate": "Apr 21, 2022",
+            "deadline": "Jun 30, 2023",
+            "test2": "<font color=\"#555555\"><b>J</b></font>",
+            "not_interested": false,
+            "job_location": "Newton Center, Massachusetts, United States",
+            "employer_logo": "",
+            "favorite": false
+        },
+        {
+            "job_id": "38565837c762eab1d388745141d227d6",
+            "name": "Johnson & Johnson",
+            "blind_flag": 0,
+            "job_desc": "<p><strong>Note: This posting is recruiting for the Raritan, NJ site only.</strong></p>\r\n<p><strong>After submitting your resume on NUworks, you also need to click &ldquo;Apply On Website&rdquo; and submit your application on J&amp;J's career portal. Your application will only be considered if you've applied in both places.</strong></p>\r\n<p><strong></strong></p>\r\n<p><strong>Job Description</strong></p>\r\n<p>At Johnson &amp; Johnson, we use technology and the power of teamwork to discover new ways to prevent and overcome the world&rsquo;s the most significant healthcare challenges. Our Corporate, Consumer Health, Medical Devices, and Pharmaceutical teams leverage data, real-world insights, and creative minds to make life-changing healthcare products and medicines. We're disrupting outdated healthcare ecosystems and infusing them with transformative ideas to help people thrive throughout every stage of their lives. With a reach of more than a billion people every day, there&rsquo;s no limit to the impact you can make here. Are you ready to reimagine healthcare?</p>\r\n<p>Here, your career breakthroughs will change the future of health, in all the best ways. And you&rsquo;ll change, too. You&rsquo;ll be inspired, and you&rsquo;ll inspire people across the world to change how they care for themselves and those they love. Amplify your impact. Join us!&nbsp;</p>\r\n<p><strong>Supply Chain and Engineering Co-op Overview</strong></p>\r\n<p>J&amp;J Supply Chain encompasses supply chain and engineering organizations across the Johnson &amp; Johnson Family of Companies. This model enables strategic supply chain decision-making across our companies, while keeping supply chain organizations embedded in our sectors and connected to our businesses, close to our respective markets and customers. All functions that &ldquo;plan, source, make and deliver&rdquo; our products &ndash; are part of J&amp;J Supply Chain. Process begins at raw component sourcing to end-product distribution with high quality, compliance, and service performance. Our technologically advanced corporate environment focuses on developing individual engineering, business, and scientific skills.&nbsp;</p>\r\n<p><strong>Life as a Supply Chain and Engineering&nbsp;Co-op</strong></p>\r\n<p>Our University hires play an important role in enhancing our business. We plan to hire 200+ Engineering/Supply Chain Fall&nbsp;2022&nbsp;co-ops, and we need YOU! The co-op program provides each student with real-life hands-on experience, coaching and mentoring, networking opportunities, as well as the opportunity to meet people from various schools throughout the country. When you join our family, you will work on projects that improve your leadership, analytical, and project management skills. Cross-functional teamwork provides an opportunity to partner with a variety of people in the organization across all our sectors; Pharmaceutical, Medical Device, Consumer and Corporate/Enterprise. We offer an interactive team environment, where your capabilities and skills will be developed to build a strong career foundation.</p>\r\n<ul>\r\n<li>Fall co-op typical term is June 2022 &ndash; December 2022 (dates are flexible)</li>\r\n<li>Some teams may offer an extended co-op term</li>\r\n<li>Assignment may be virtual/remote, while other business critical roles will be onsite and may require relocation</li>\r\n<li>Assignment area and work-site location will be matched to business needs</li>\r\n<li>Some roles may offer one-time housing stipend assistance if you are assigned to work onsite</li>\r\n<li>For roles that require you to work on site, transportation is the student&rsquo;s responsibility</li>\r\n<li>Full time availability (40 hours per week)</li>\r\n<li>Career mentorship is available with endless networking opportunities within assigned team and beyond</li>\r\n<li>Pay rate is determined based on the grade level at time of offer. Undergrad Sophomore $22.00/hr, Undergrad Junior $23.50/hr, Undergrad Senior $24.50/hr, pursuing master&rsquo;s degree $28.50/hr, pursuing PhD $40/hr</li>\r\n<li>This position is overtime eligible</li>\r\n<li>Employee may be eligible to participate in Company employee benefit programs, such as medical benefits, sick time and holiday pay, in accordance with the terms of the applicable plans</li>\r\n<li>For additional general information on company benefits, please go to: -https://www.careers.jnj.com/employee-benefits</li>\r\n</ul>\r\n<p><strong>Available Co-op Areas</strong></p>\r\n<ul>\r\n<li>Product/Demand Planning</li>\r\n<li>Project Management</li>\r\n<li>Advanced/Manufacturing Technologies</li>\r\n<li>Supply Chain Planning/Management</li>\r\n<li>Warehouse and Distribution</li>\r\n<li>Systems Delivery and Trade</li>\r\n<li>Affiliate Services Management</li>\r\n<li>Customer Logistics</li>\r\n<li>Procurement and Sourcing</li>\r\n<li>Business Excellence</li>\r\n<li>Process Engineering</li>\r\n<li>Quality Engineering</li>\r\n<li>Operations Engineering</li>\r\n<li>Franchise Integration</li>\r\n</ul>\r\n<p><strong>Available Locations</strong></p>\r\n<p>While locations/facilities have been aligned to our Internships and Co-Ops positions, assignments could be virtual due to the uncertainties of COVID-19.&nbsp;</p>\r\n<p>High Volume:</p>\r\n<ul>\r\n<li>New Jersey (Bridgewater, Piscataway, Princeton, Somerville, Somerset, Raritan, Titusville, Skillman, New Brunswick)</li>\r\n<li>Pennsylvania (Fort Washington, Lancaster, West Chester, Spring House, Malvern, Lititz, Horsham)</li>\r\n<li>Georgia (Athens. Cornelia)</li>\r\n<li>Massachusetts (Bridgewater, Raynham)</li>\r\n</ul>\r\n<p>Alternative Locations:&nbsp;Arkansas, California, Colorado, Florida,&nbsp;Illinois, Indiana, Kentucky, Minnesota, New Mexico, Ohio, Rhode Island, Tennessee, Texas, Wisconsin</p>\r\n<p><strong>Desired Majors</strong></p>\r\n<ul>\r\n<li>Supply Chain Management</li>\r\n<li>Biomedical Engineering</li>\r\n<li>Chemical / Biochemical Engineering</li>\r\n<li>Communications Engineering</li>\r\n<li>Computer/ Software / Systems Engineering</li>\r\n<li>Electrical Engineering</li>\r\n<li>Industrial Engineering</li>\r\n<li>Materials Sciences</li>\r\n<li>Packaging Sciences</li>\r\n<li>Accounting / Economics / Finance</li>\r\n<li>Business (Management, Marketing, etc.)</li>\r\n<li>Math (Statistics, etc.)</li>\r\n</ul>\r\n<p>We are an equal opportunity employer and value diversity at our company. We do not discriminate on the basis of race, religion, color, national origin, gender, sexual orientation, age, marital status, veteran status, or disability status.</p>\r\n<p>#jnjsupplychain #jnjcoop #jnjundergraduate #jnjengineering</p>\r\n<p><strong>Qualifications</strong></p>\r\n<ul>\r\n<li>Candidates must be legally authorized to work in the U.S. and must not require sponsorship for employment visa status now, or in the future (ex. H1-B, F-1)</li>\r\n<li>Candidate must be actively enrolled in an accredited University for the duration of a co-op assignment pursuing a Bachelor&rsquo;s, Master&rsquo;s and/or MBA</li>\r\n<li>Minimum GPA of 2.8 is required</li>\r\n<li>Completion of Undergraduate Freshmen year at accredited University is required</li>\r\n<li>Ability to demonstrate strong analytical and quantitative skills is required</li>\r\n<li>Excellent communication, presentation skills and leadership skills are preferred</li>\r\n<li>Ability to balance multiple projects and initiatives while executing results</li>\r\n<li>Must be a self-starter who works independently while contributing to the team goals</li>\r\n<li>Participation in an Engineering Society is desired</li>\r\n<li>Proven leadership/participation with campus programs and/or community service activities is desired</li>\r\n</ul>\r\n<p>Primary Location<br />United States---<br />Organization<br />Johnson &amp; Johnson Health Care Systems Inc. (6077)<br />Job Function<br />General Administration<br />Requisition ID<br />2105903816W</p>",
+            "visual_id": "56500",
+            "job_title": "2022 Supply Chain & Engineering Fall Co-op (June Start)",
+            "ocr_flag": 0,
+            "job_type": [
+                "Co-op"
+            ],
+            "symp_remote_job": 0,
+            "qualified": "Not Qualified",
+            "jobs_iso_times": {
+                "job_start": "2022-04-20T00:00:00-04:00",
+                "job_end": "2022-05-01T23:59:59-04:00"
+            },
+            "postdate": "Apr 20, 2022",
+            "deadline": "May 01, 2022",
+            "test2": "<font color=\"#555555\"><b>J</b></font>",
+            "not_interested": false,
+            "job_location": "Raritan, New Jersey, United States",
+            "employer_logo": "",
+            "favorite": false
+        },
+        {
+            "job_id": "e0143794e02b64972ae54af99c684f8e",
+            "name": "South End Community Health Center, Inc. (East Boston Community Health Center)",
+            "blind_flag": 0,
+            "job_desc": "<p><strong>***Must be fluent in English and conversational in Spanish***</strong></p>\r\n<p><br />South End Community Health Center (SECHC) is a comprehensive health care organization for all residents of the South End and surrounding communities. The center is committed to providing the highest quality, coordinated health care that is culturally and linguistically sensitive to every patient, regardless of ability to pay. SECHC was founded in 50 years ago by neighborhood activists in response to persistent health care disparities and lack of access to quality health care in Boston's South End community. SECHC provides primary medical care, walk-in care, behavioral health services, dental and eye care.<br /><br />SECHC's high quality services and programs include primary care and prenatal medicine, behavioral health, dental and eye care. SECHC's Quality Improvement program has been recommended as a national model by HRSA. The center's special services include office-based addiction treatment, civil surgeon and immigration physicals, diabetes management, family planning, HIV/AIDS and HCV testing and care, midwifery, neurology, nutrition, OB/GYN, pediatric asthma/pulmonology, pediatric dermatology, podiatry, and sexual health.<br /><br />SECHC serves men, women and children of all ages, races and ethnicities with the majority identify as Hispanic/Latinx. Furthermore, those living in public or assisted housing, or experiencing homelessness or housing insecurity, receive comprehensive coordinated care at SECHC. This diverse neighborhood presents many unique opportunities to set new standards in community health and wellness.<br /><br /><strong>Job description</strong></p>\r\n<p>Working in the department of Family Medicine under direction of a physician, the focus of the job is to enhance the efficiency and improve the flow of patients while maintaining and improving patient satisfaction. The Medical Scribe will have the responsibility for annotating any dictated or written information for the treatment of patients following all local, state and federal guidelines for documentation into the EMR. The Medical Scribe can assist the physician with researching and recording a patient's EMR by assembling and reviewing nurse's notes, EMS reports, referral notes from other health care facilities, and hospital records (prior admission notes, discharge summaries, operative/procedure notes). The department of family medicine is dedicated to seeing patients of all ages by providing quality preventative care and patient centered care.<br /><br />Responsibilities include:<br /><br />&middot; Assist the provider with documentation of each patient's medical chart during the visit.<br />&middot; Accompany the physician in the exam room for the patient interview and examination.<br />&middot; Document the physical examination and history of the patient.<br />&middot; List all proper diagnosis and symptoms as well as follow up instructions and prescriptions as dictated by the physician.<br />&middot; Transcribe patient orders including laboratory test, radiology test, point of care testing, etc.<br />&middot; Document any procedures performed by the provider or nurses, on the electronic medical chart.<br />&middot; Complete the patient's chart by transcribing results of any labs, x-rays, or other evaluations. In doing so, the scribe continuously checks on the progress of this data in order to get the patient's workup complete so that the provider is able to make his/her decisions regarding that patient.<br />&middot; Develop expertise in the use of various templates, and documentation techniques available in the EMR, and use these tools efficiently so individual encounters can be well documented, as well as accurate congregate data collected for statistical reports.<br />&middot; Opportunity to collaborate in weekly quality improvement meetings across the different departments</p>\r\n<p><br /><strong>Skill Requirements</strong><br /><br />&middot; <strong>Must be fluent in English and proficient in written and spoken Spanish</strong><br /><br />&middot; Ability to write routine reports and correspondence.<br /><br />&middot; Proficient in typing and good at spelling, punctuation, grammar, and oral communication.<br /><br />&middot; Must be able to listen to complex medical information and summarize in a clear, complete, and concise fashion.</p>\r\n<p><br />&middot; Familiarity with electronic medical record systems OCHIN/EPIC preferred<br /><br />&middot; Medical Scribing experience is a plus</p>\r\n<p>&middot; CNA/EMT certification or equivalent strongly preferred</p>\r\n<p></p>\r\n<p><strong>Recommended Experience</strong><br /><br />&middot; Healthcare Student: pre-med, pre-physician's assistant, nursing, healthcare administration, etc.<br /><br />&middot; College level education including medical related courses preferred</p>",
+            "visual_id": "56376",
+            "job_title": "Medical Scribe",
+            "ocr_flag": 0,
+            "job_type": [
+                "Co-op"
+            ],
+            "symp_remote_job": 0,
+            "qualified": "Not Qualified",
+            "jobs_iso_times": {
+                "job_start": "2022-04-19T00:00:00-04:00",
+                "job_end": "2022-06-30T23:59:59-04:00"
+            },
+            "postdate": "Apr 19, 2022",
+            "deadline": "Jun 30, 2022",
+            "test2": "<font color=\"#555555\"><b>J</b></font>",
+            "not_interested": false,
+            "job_location": "Boston, Massachusetts, United States",
+            "employer_logo": "",
+            "favorite": false
+        },
+        {
+            "job_id": "39fc671259b20b639f42d0be773b3968",
+            "name": "Massachusetts General Hospital, Department of Pharmacy",
+            "blind_flag": 0,
+            "job_desc": "<p>We are looking to add a Blue Prism Developer / Data Scientist to our Analytics and Business Intelligence Team at the Massachusetts General Hospital's Department of Pharmacy!</p>\r\n<p>Massachusetts General Hospital (MGH), part of the MGB enterprise, is a 1000+<br />bed acute care academic medical center, located in the heart of Boston,<br />Massachusetts. MGH is the third-oldest hospital in the United States and the<br />largest in New England; its history and achievements have earned it a reputation<br />as one of the foremost medical centers in the world. MGH is affiliated with<br />Harvard Medical School and conducts the largest hospital-based research<br />program in the United States.</p>\r\n<p>The Department of Pharmacy's Vision is to be 'at the forefront of exceptional pharmacy practice'. A comprehensive data analytics program allows for enhanced decision making as we serve our patients and communities through innovation, research, education and interdisciplinary collaboration.&nbsp;</p>\r\n<p>If you have the expertise and passion to work with a variety of healthcare and business data, provide insights for strategic directions, and help maximize efficiencies, please apply.</p>\r\n<p>In the realm of healthcare, you will help improve patient outcomes and lower medication costs.</p>\r\n<p>Application <a href=\"https://partners.taleo.net/careersection/ghc/jobdetail.ftl?job=3193411&amp;tz=GMT-04%3A00&amp;tzname=America%2FNew_York\" target=\"_blank\" rel=\"noopener\">link</a>.</p>",
+            "visual_id": "56325",
+            "job_title": "Blue Prism Developer / Data Scientist ",
+            "ocr_flag": 0,
+            "job_type": [
+                "Full Time / Part Time"
+            ],
+            "symp_remote_job": 0,
+            "qualified": "",
+            "jobs_iso_times": {
+                "job_start": "2022-04-18T00:00:00-04:00",
+                "job_end": "2022-07-18T23:59:59-04:00"
+            },
+            "postdate": "Apr 18, 2022",
+            "deadline": "Jul 18, 2022",
+            "test2": "<font color=\"#555555\"><b>J</b></font>",
+            "not_interested": false,
+            "job_location": "Boston, Massachusetts, United States",
+            "employer_logo": "https://s3.amazonaws.com/symp.csm.usprod/northeastern/files/39b/39b8042a25f62a99aab016a8c48f640f.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAID3RBESXBCESHUGA%2F20220427%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220427T162811Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Signature=b29abf1aada5e732e71a4026eea801cd8caa04e9a088146d65a9693786e1aa22",
+            "favorite": false
+        },
+        {
+            "job_id": "ad402fa3a8afaefdf34911d846c55034",
+            "name": "Boston Children's Hospital",
+            "blind_flag": 0,
+            "job_desc": "<p>The Boston Children&rsquo;s Hospital Division of Developmental Medicine has an opportunity for a student to work on a project that will support clinical research and provide an opportunity for direct patient contact and research experience in a clinical setting.</p>\r\n<p>The Developmental Medicine Clinical Research Laboratories (DM-CRL) serves as a platform to narrow the gap between new scientific discoveries in neuroscience and the clinical care provided to children with neurodevelopmental and behavioral disorders. Our projects occur in the context of our large, multidisciplinary outpatient clinic, where we diagnose and manage children and adolescents with a broad range of behavioral and developmental conditions, such as autism and ADHD.&nbsp;</p>\r\n<p>The student will have the opportunity to gain hands-on experience with clinical research methods and participate remotely in DM-CRL and relevant meetings.</p>\r\n<p>Project opportunities include:</p>\r\n<p>Centralized Recruitment Assistance</p>\r\n<ul>\r\n<li>Responsibilities: Work with the CRL Recruitment Navigator to contact all patient families seen in clinic about any research projects in the CRL that they may be eligible for, with the goal of allowing all patient families more equitable access to research opportunities.</li>\r\n</ul>\r\n<p>Centralized Recruitment Improvement</p>\r\n<ul>\r\n<li>Responsibilities: Work with staff to track and implement changes to Centralized Recruitment process; improve the quality and usability of REDCap database used for tracking; help implement, collect, analyze, and summarize data related to Centralized Recruitment</li>\r\n</ul>\r\n<p>Clinical Research Coordination Support</p>\r\n<ul>\r\n<li>Additional opportunities to assist with other clinical research projects ongoing in Developmental Medicine, including longitudinal and interventional research studies and other projects.</li>\r\n</ul>",
+            "visual_id": "56270",
+            "job_title": "Clinical Research Recruitment in Developmental Medicine",
+            "ocr_flag": 0,
+            "job_type": [
+                "Co-op"
+            ],
+            "symp_remote_job": 0,
+            "qualified": "Not Qualified",
+            "jobs_iso_times": {
+                "job_start": "2022-04-15T00:00:00-04:00",
+                "job_end": "2022-05-31T23:59:59-04:00"
+            },
+            "postdate": "Apr 15, 2022",
+            "deadline": "May 31, 2022",
+            "test2": "<font color=\"#555555\"><b>J</b></font>",
+            "not_interested": false,
+            "job_location": "Boston, Massachusetts, United States",
+            "employer_logo": "",
+            "favorite": false
+        },
+        {
+            "job_id": "1427ddb5a04d18051d66406772b6c313",
+            "name": "Activ Surgical",
+            "blind_flag": 0,
+            "job_desc": "<p><strong>Company Overview</strong></p>\r\n<p>Founded in 2017, Activ Surgical is a new breed medical device start-up focused on improving patient outcomes and reducing costs to healthcare systems through the integration of advanced computer vision, artificial intelligence and robotics designed to seamlessly fit within operating room workflow while providing advanced imaging and diagnostic accuracy during surgery.</p>\r\n<p><strong>Position Summary</strong></p>\r\n<p>We are looking for someone to work closely with other members of the team in a stimulating environment and is curious about new opportunities to learn and grow. Our team is both ambitious and supportive, and we expect that new team members help build this team culture as the company grows.</p>\r\n<p>As co-ops in the research department, the candidates will be helping with a<br />multitude of ongoing projects linked to fluorescence and multispectral imaging.<br />While some background in optics, image processing, Software and programming will be helpful, curiosity and eagerness to learn are the most useful qualities for this position.</p>",
+            "visual_id": "56196",
+            "job_title": "Research Co-Op",
+            "ocr_flag": 0,
+            "job_type": [
+                "Co-op"
+            ],
+            "symp_remote_job": 0,
+            "qualified": "",
+            "jobs_iso_times": {
+                "job_start": "2022-04-15T00:00:00-04:00",
+                "job_end": "2022-06-01T23:59:59-04:00"
+            },
+            "postdate": "Apr 15, 2022",
+            "deadline": "Jun 01, 2022",
+            "test2": "<font color=\"#555555\"><b>J</b></font>",
+            "not_interested": false,
+            "job_location": "Boston, Massachusetts, United States",
+            "employer_logo": "https://s3.amazonaws.com/symp.csm.usprod/northeastern/files/752/75248028a046270f19eed7e37783eb14.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAID3RBESXBCESHUGA%2F20220427%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220427T100353Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Signature=e2ff1ed13a310c1cf7cb71d31e0aa3694898ccd25ffdd46cca7ffc9e5978abac",
+            "favorite": false
+        },
+        {
+            "job_id": "6dd5f1041a2bc5dd890cdcb9919d618d",
+            "name": "Brigham and Women's Hospital",
+            "blind_flag": 0,
+            "job_desc": "<p>Traverso Laboratory, Department of Medicine, Brigham and Women&rsquo;s Hospital, Harvard Medical School, Full-time, 40 hours/week</p>\r\n<p>Project Description:<br />We are seeking a&nbsp;cooperative (co-op) education students,&nbsp;in the Traverso Lab at Brigham and Women&rsquo;s Hospital with a backgrounds in&nbsp;synthetic organic chemistry, polymer chemistry, or related. Our research group consists of an interdisciplinary team of engineers, chemists, biologists, pharmaceutical scientists,&nbsp;and physicians focused on developing clinically translatable biomedical devices and drug delivery systems.&nbsp;&nbsp;</p>\r\n<p>The student will contribute towards developing triggerable, self-destructive materials used to engineer oral, implantable and transdermal systems for long-term delivery medicinal therapeutics. Primary responsibilities include synthesizing organic compounds and chemical intermediates, purification of compounds using flash chromatography, quantitative chemical analysis, device fabrication, and assisting with in vivo small and large animals.</p>\r\n<p>&nbsp;&nbsp;</p>\r\n<p>Job Requirements:</p>\r\n<p>&nbsp;</p>\r\n<p>The candidate should be a student enrolled in a B.S./M.S.&nbsp;program or equivalent&nbsp;in chemistry, materials science, chemical engineering, biochemistry or a related field.&nbsp;An ideal candidate will have demonstrated research background in synthetic organic chemistry, analytical chemistry, or materials chemistry. In addition, the ideal candidate must demonstrate at least three of the following:</p>\r\n<p>&nbsp;</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Demonstrated experience with chemical synthesis.</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Conducted, a minimum, 1 semester of chemistry-related research in a professional laboratory (outside of undergraduate and graduate curricula).</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Completed two semesters of Organic chemistry (I and II) with lab.</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Experience with quantitative analytical techniques (HPLC/LCMS, NMR, GPC).</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Familiar with SciFinder/Reaxys/ResearchGate/Google Scholar to help design efficient synthetic routes.</p>\r\n<p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Familiar with ChemDraw software for designing schemes and structures.</p>\r\n<p>&nbsp;</p>\r\n<p>Applicant will be trained to perform techniques in experiments, including modern synthetic organic chemistry and analytical chemistry. After sufficient training, the intern is expected to work independently with minimal supervision;</p>\r\n<p>&nbsp;</p>\r\n<p>Candidate must have self-motivation and willingness to learn new tools and techniques; strong organizational, interpersonal, and communication skills; ability to work independently and as part of a team; comfort summarizing and reporting results to interdisciplinary researchers; commitment to exceeding standards and producing accurate, high quality work; meticulous attention to detail; practiced documentation skills; and ability to follow safety procedures and maintain a safe work environment.&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Interested candidates should send a resume, transcript, and a brief description outlining their research interests and availability to Aaron Lopes (lopesa@mit.edu), and cc: Professor Giovanni Traverso (PI, ctraverso@bwh.harvard.edu) and Vanessa Fuentes (Program Manager, vgfuentes@bwh.harvard.edu).</p>",
+            "visual_id": "56281",
+            "job_title": "Traverso Laboratory - Department of Medicine Co-op",
+            "ocr_flag": 0,
+            "job_type": [
+                "Co-op"
+            ],
+            "symp_remote_job": 0,
+            "qualified": "",
+            "jobs_iso_times": {
+                "job_start": "2022-04-15T00:00:00-04:00",
+                "job_end": "2022-06-30T23:59:59-04:00"
+            },
+            "postdate": "Apr 15, 2022",
+            "deadline": "Jun 30, 2022",
+            "test2": "<font color=\"#555555\"><b>J</b></font>",
+            "not_interested": false,
+            "job_location": "Cambridge, Massachusetts, United States",
+            "employer_logo": "",
+            "favorite": false
+        },
+        {
+            "job_id": "f466c86d4ffaae938cf6a73aa3e081d6",
+            "name": "Johnson & Johnson",
+            "blind_flag": 0,
+            "job_desc": "<p><strong>After submitting your resume on NUworks, you also need to click &ldquo;Apply On Website&rdquo; and submit your application on J&amp;J's career portal. Your application will only be considered if you've applied in both places.</strong></p>\r\n<p><strong></strong></p>\r\n<p><strong>Job Description</strong></p>\r\n<p>At Johnson &amp; Johnson, we use technology and the power of teamwork to discover new ways to prevent and overcome the world&rsquo;s the most significant healthcare challenges. Our Corporate, Consumer Health, Medical Devices, and Pharmaceutical teams leverage data, real-world insights, and creative minds to make life-changing healthcare products and medicines. We're disrupting outdated healthcare ecosystems and infusing them with transformative ideas to help people thrive throughout every stage of their lives. With a reach of more than a billion people every day, there&rsquo;s no limit to the impact you can make here. Are you ready to reimagine healthcare?</p>\r\n<p>Here, your career breakthroughs will change the future of health, in all the best ways. And you&rsquo;ll change, too. You&rsquo;ll be inspired, and you&rsquo;ll inspire people across the world to change how they care for themselves and those they love. Amplify your impact. Join us!</p>\r\n<p>The Global Services Contracting Co Op is a 20-week program that encompasses functional &amp; professional development, as well as completion of project(s) related to strategic business initiatives. Co-Ops may also participate in organized activities, including team events, and local community service projects to understand the company culture and career opportunities.</p>\r\n<p><strong>Major Duties &amp; Responsibilities&nbsp;might include (but are not limited to):</strong></p>\r\n<ul>\r\n<li>Analytics - Initiate measurement mechanisms and/or track metrics for Global Services Contracting, in collaboration with the Contracting Team Member</li>\r\n<li>Project Management - Team Lead or Team Member for Contracting projects and/ or community events</li>\r\n<li>Process Management - Develop and document best practices, processes, and analytics tools.</li>\r\n<li>Contracting Operations - Learn and implement Contracting process including Intake, Draft, Negotiation and Finalization.</li>\r\n</ul>\r\n<p><strong>Qualifications</strong></p>\r\n<p><em>Required Minimum Education:</em></p>\r\n<ul>\r\n<li>Must be a matriculated student completing her/his bachelor&rsquo;s degree. GPA of 3.0 or higher.</li>\r\n</ul>\r\n<p><em>Required Years of Related Experience:</em></p>\r\n<ul>\r\n<li>1-year work/student organization leadership experience, or past internship / co-op in business role, preferably sourcing, supply chain, legal or procurement-related.</li>\r\n</ul>\r\n<p><em>Required Knowledge, Skills and Abilities:&nbsp;&nbsp;</em></p>\r\n<p>Key skills include:</p>\r\n<ul>\r\n<li>Must have strong analytical abilities</li>\r\n<li>Must have excellent interpersonal, influencing, and communication skills (both oral and written) &ndash; within all levels of the organization.</li>\r\n<li>Must have intermediate to advanced knowledge of Excel, PowerPoint and Word</li>\r\n<li>Demonstrated leadership abilities are essential.</li>\r\n<li>Requires the ability to think strategically and creatively, to thrive in ambiguity, and to deliver results.</li>\r\n<li>Must be legally authorized to work in the United States and not require sponsorship for employment visa status (e.g. H1-B status) now or in the future.</li>\r\n<li>GPA of 3.0 or higher.</li>\r\n</ul>\r\n<p><em>Johnson &amp; Johnson is an Affirmative Action and Equal Opportunity Employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, age, national origin, or protected veteran status and will not be discriminated against on the basis of disability.</em></p>\r\n<p>Primary Location<br />United States-New Jersey-Raritan-1000 US HIghway 202</p>\r\n<p>Organization<br />Johnson &amp; Johnson Services Inc. (6090)</p>\r\n<p>Job Function<br />General Administration</p>\r\n<p><br />Requisition ID<br />2206015715W</p>",
+            "visual_id": "56107",
+            "job_title": "Supplier Contracting Services Co-Op (June Start)",
+            "ocr_flag": 0,
+            "job_type": [
+                "Co-op"
+            ],
+            "symp_remote_job": 0,
+            "qualified": "Not Qualified",
+            "jobs_iso_times": {
+                "job_start": "2022-04-14T00:00:00-04:00",
+                "job_end": "2022-05-01T23:59:59-04:00"
+            },
+            "postdate": "Apr 14, 2022",
+            "deadline": "May 01, 2022",
+            "test2": "<font color=\"#555555\"><b>J</b></font>",
+            "not_interested": false,
+            "job_location": "Raritan, New Jersey, United States",
+            "employer_logo": "",
+            "favorite": false
+        }
+    ],
+    "metadata": {
+        "defaultFilters": {
+            "ocr_status": "a"
+        },
+        "currentSort": {
+            "postdate": "desc"
+        }
+    },
+    "columns": [
+        {
+            "field": "name",
+            "display": null
+        },
+        {
+            "field": "blind_flag",
+            "display": null
+        },
+        {
+            "field": "job_desc",
+            "display": "Job Description"
+        },
+        {
+            "field": "pickVal",
+            "display": null
+        },
+        {
+            "field": "visual_id",
+            "display": null
+        },
+        {
+            "field": "job_title",
+            "display": null
+        },
+        {
+            "field": "job_start",
+            "display": null
+        },
+        {
+            "field": "job_end",
+            "display": null
+        },
+        {
+            "field": "application_deadline",
+            "display": null
+        },
+        {
+            "field": "ocr_flag",
+            "display": null
+        },
+        {
+            "field": "job_type",
+            "display": null
+        },
+        {
+            "field": "symp_remote_job",
+            "display": null
+        },
+        {
+            "field": "resume_mode",
+            "display": null
+        },
+        {
+            "field": "in_app_application",
+            "display": "Can apply on App"
+        },
+        {
+            "field": "qualified",
+            "display": "Qualified"
+        },
+        {
+            "field": "source",
+            "display": null
+        },
+        {
+            "field": "imported_id",
+            "display": null
+        },
+        {
+            "field": "contact_info",
+            "display": null
+        }
+    ]
+}
