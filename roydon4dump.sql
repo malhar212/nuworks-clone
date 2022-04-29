@@ -41,7 +41,7 @@ CREATE TABLE `application` (
   CONSTRAINT `fk_applicationjobid_idx` FOREIGN KEY (`jobid`) REFERENCES `job` (`jobid`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_applicationuserid_idx` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_appstatusid_idx` FOREIGN KEY (`appstatusid`) REFERENCES `job_app_status` (`statusid`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -104,6 +104,23 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `delete_document_on_jobdelete` AFTER DELETE ON `application` FOR EACH ROW BEGIN 
+    delete from document where applicationid= old.applicationid;
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
 -- Table structure for table `city`
@@ -147,7 +164,7 @@ CREATE TABLE `document` (
   PRIMARY KEY (`docid`),
   KEY `fk_documentapplicationid_idx` (`applicationid`),
   CONSTRAINT `fk_documentapplicationid` FOREIGN KEY (`applicationid`) REFERENCES `application` (`applicationid`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -186,7 +203,7 @@ CREATE TABLE `job` (
   CONSTRAINT `fk_joborgid_idx` FOREIGN KEY (`orgid`) REFERENCES `organization` (`orgid`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_jobstatusid_idx` FOREIGN KEY (`jobstatusid`) REFERENCES `job_app_status` (`statusid`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_jobuserid` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -195,9 +212,26 @@ CREATE TABLE `job` (
 
 LOCK TABLES `job` WRITE;
 /*!40000 ALTER TABLE `job` DISABLE KEYS */;
-INSERT INTO `job` VALUES (1,'Project Management','Part-Time','This is part time work for 4-5 hours daily at KEVAHEALTH Inc','2022-04-28 02:29:08',2,2,3,'Healthcare',2,0),(2,'Project Management Intern','Internship','<p>This is an unpaid Internship at KEVAHEALTH Inc as a Project Management Intern for 40 hours per week. In this position, you will report directly to Jyotsna Mehta beginning May 9, 2022.</p>\r\n<p>This is in accordance with the Fair Labor Standards Act ref.','2022-04-28 02:29:08',2,2,3,'Healthcare',2,1),(3,'Software Developer Intern','Internship','<p>This is an paid Internship at KEVAHEALTH Inc as a SDE Intern for 40 hours per week. In this position, you will report directly to Richard Smith beginning May 9, 2022.</p>\r\n<p>This is in accordance with the Fair Labor Standards Act ref.','2022-04-28 02:29:08',2,3,3,'IT',2,0),(4,'Software Engineer Co-op','Full Time / Part Time','<p>ABOUT ACTIV</p>\r\n<p>Founded in 2017, Activ Surgical is a first-of-its kind digital surgery company focused on improving surgical efficiency, accuracy, patient outcomes and accessibility for both endoscopic and robotically assisted procedures','2022-04-28 02:29:08',2,5,4,'Software',1,1),(5,'Biotech Co-op','Full Time / Part Time','<p>ABOUT ACTIV</p>\r\n<p>Founded in 2017, Activ Surgical is a first-of-its kind digital surgery company focused on improving surgical efficiency, accuracy, patient outcomes and accessibility for both endoscopic and robotically assisted procedures','2022-04-28 02:29:08',2,2,4,'Healthcare',1,2),(6,'Biotech Internship','Internship','<p>ABOUT ACTIV</p>\r\n<p>Founded in 2017, Activ Surgical is a first-of-its kind digital surgery company focused on improving surgical efficiency, accuracy, patient outcomes and accessibility for both endoscopic and robotically assisted procedures',NULL,1,2,4,'Healthcare',1,0);
+INSERT INTO `job` VALUES (1,'Project Management','Part-Time','This is part time work for 4-5 hours daily at KEVAHEALTH Inc','2022-04-28 02:29:08',2,2,3,'Healthcare',2,0),(2,'Project Management Intern','Internship','<p>This is an unpaid Internship at KEVAHEALTH Inc as a Project Management Intern for 40 hours per week. In this position, you will report directly to Jyotsna Mehta beginning May 9, 2022.</p>\r\n<p>This is in accordance with the Fair Labor Standards Act ref.','2022-04-28 02:29:08',2,2,3,'Healthcare',2,1),(3,'Software Developer Intern','Internship','<p>This is an paid Internship at KEVAHEALTH Inc as a SDE Intern for 40 hours per week. In this position, you will report directly to Richard Smith beginning May 9, 2022.</p>\r\n<p>This is in accordance with the Fair Labor Standards Act ref.','2022-04-28 02:29:08',2,3,3,'IT',2,0),(4,'Software Engineer Co-op','Full Time / Part Time','<p>ABOUT ACTIV</p>\r\n<p>Founded in 2017, Activ Surgical is a first-of-its kind digital surgery company focused on improving surgical efficiency, accuracy, patient outcomes and accessibility for both endoscopic and robotically assisted procedures','2022-04-28 02:29:08',2,5,4,'Software',1,1),(5,'Biotech Co-op','Full Time / Part Time','<p>ABOUT ACTIV</p>\r\n<p>Founded in 2017, Activ Surgical is a first-of-its kind digital surgery company focused on improving surgical efficiency, accuracy, patient outcomes and accessibility for both endoscopic and robotically assisted procedures','2022-04-28 02:29:08',2,2,4,'Healthcare',1,2),(6,'Biotech Internship','Internship','<p>ABOUT ACTIV</p>\r\n<p>Founded in 2017, Activ Surgical is a first-of-its kind digital surgery company focused on improving surgical efficiency, accuracy, patient outcomes and accessibility for both endoscopic and robotically assisted procedures',NULL,1,2,4,'Healthcare',1,0),(7,'IT Developer Intern','Internship','<p>Internship for 3 months</p>',NULL,1,25,21,'IT',1,0);
 /*!40000 ALTER TABLE `job` ENABLE KEYS */;
 UNLOCK TABLES;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `delete_joblocation_on_jobdelete` AFTER DELETE ON `job` FOR EACH ROW BEGIN 
+    delete from joblocation where jobid= old.jobid;
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
 -- Table structure for table `job_app_status`
@@ -240,7 +274,7 @@ CREATE TABLE `joblocation` (
   KEY `fk_jobcityid_idx` (`cityid`),
   CONSTRAINT `fk_jobcityid_idx` FOREIGN KEY (`cityid`) REFERENCES `city` (`cityid`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_jobid_idx` FOREIGN KEY (`jobid`) REFERENCES `job` (`jobid`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -249,7 +283,7 @@ CREATE TABLE `joblocation` (
 
 LOCK TABLES `joblocation` WRITE;
 /*!40000 ALTER TABLE `joblocation` DISABLE KEYS */;
-INSERT INTO `joblocation` VALUES (1,1,1),(2,2,1),(3,3,1),(5,3,3),(4,4,2),(6,4,3),(7,13,4),(8,18,4),(9,18,5),(10,18,6);
+INSERT INTO `joblocation` VALUES (1,1,1),(2,2,1),(3,3,1),(5,3,3),(11,3,7),(4,4,2),(6,4,3),(7,13,4),(8,18,4),(9,18,5),(10,18,6);
 /*!40000 ALTER TABLE `joblocation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -480,6 +514,81 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `create_new_jobpost` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `create_new_jobpost`(IN pvarposition varchar(255),IN pvartype varchar(45),IN pvardescription longtext,
+IN pinjobstatusid int, IN pinvacancycount int, IN pinorgid int, IN pvarcategory varchar(45), IN pinuserid int,
+IN pvarstate varchar(200), IN pvarcity varchar(200), OUT result INT)
+BEGIN
+	DECLARE errno varchar(500);
+	DECLARE varjobid, varcityexists, varcityid int;
+    DECLARE front1,front2 TEXT DEFAULT NULL;
+	DECLARE frontlen1,frontlen2 INT DEFAULT NULL;
+	DECLARE varcityname,varstatename TEXT DEFAULT NULL;
+	DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN
+		GET CURRENT DIAGNOSTICS CONDITION 1 errno = MESSAGE_TEXT;
+		SELECT errno AS MYSQL_ERROR;
+		ROLLBACK;
+		SET result = 1;
+	END;
+    SET AUTOCOMMIT = 0;
+    SET FOREIGN_KEY_CHECKS=0;
+    START TRANSACTION;
+	SET result = 0;
+    
+	INSERT INTO job (position, type, description, publishdate, jobstatusid, vacancycount, orgid, category, userid)
+	VALUES (pvarposition, pvartype, pvardescription, IF(pinjobstatusid=2, now(), null), pinjobstatusid, pinvacancycount, pinorgid, pvarcategory, pinuserid);
+    
+    SELECT LAST_INSERT_ID() INTO varjobid; 
+  
+    IF result = 0 THEN
+		iterator:
+		LOOP  
+			IF LENGTH(TRIM(pvarcity)) = 0 OR pvarcity IS NULL THEN
+				LEAVE iterator;
+			END IF;
+            
+			SET front1 = SUBSTRING_INDEX(pvarcity,',',1);
+            SET front2 = SUBSTRING_INDEX(pvarstate,',',1);
+			
+            SET frontlen1 = LENGTH(front1);
+            SET frontlen2 = LENGTH(front2);
+			
+            SET varcityname = TRIM(front1);
+            SET varstatename = TRIM(front2);
+            
+            SELECT count(*) into varcityexists FROM city where lower(cityname)=lower(varcityname);
+            IF varcityexists=1 THEN
+				SELECT cityid into varcityid FROM city where lower(cityname)=lower(varcityname);
+                INSERT INTO `joblocation`(cityid, jobid) VALUES (varcityid, varjobid);
+			ELSEIF varcityexists > 1 THEN
+				SELECT cityid into varcityid FROM city where lower(cityname)=lower(varcityname)
+                AND lower(statename)=lower(varstatename);
+                INSERT INTO `joblocation`(cityid, jobid) VALUES (varcityid, varjobid);
+            END IF;
+            
+            SET pvarcity = INSERT(pvarcity,1,frontlen1 + 1,'');
+            SET pvarstate = INSERT(pvarstate,1,frontlen2 + 1,'');
+		END LOOP;
+    END IF;
+    
+    COMMIT;
+    SET FOREIGN_KEY_CHECKS=1;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `delete_application` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -503,6 +612,37 @@ BEGIN
 	SET result = 0;
     DELETE from document where applicationid=appid;
     DELETE from application where applicationid=appid;
+    COMMIT;
+    SET FOREIGN_KEY_CHECKS=1;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `delete_job` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_job`(IN pinjobid int ,OUT result INT)
+BEGIN
+	DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN
+		ROLLBACK;
+		SET result = 1;
+	END;
+    SET AUTOCOMMIT = 0;
+    SET FOREIGN_KEY_CHECKS=0;
+    START TRANSACTION;
+	SET result = 0;
+    DELETE from application where jobid = pinjobid;
+    DELETE from job where jobid=pinjobid;
     COMMIT;
     SET FOREIGN_KEY_CHECKS=1;
 END ;;
@@ -740,6 +880,51 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `get_job_data` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_job_data`(IN pinjobid int)
+BEGIN
+SELECT 
+    j.jobid,
+    o.name,
+    j.position,
+    j.type,
+    j.description,
+    js.statusdesc,
+    j.publishdate,
+    j.vacancycount,
+    j.applicantcount,
+    j.category,
+    GROUP_CONCAT(CONCAT(c.cityname, '-', s.statename)) AS location
+FROM
+    job j
+        INNER JOIN
+    organization o ON j.orgid = o.orgid
+        INNER JOIN
+    job_app_status js ON j.jobstatusid = js.statusid
+        LEFT OUTER JOIN
+    joblocation jl ON j.jobid = jl.jobid
+        INNER JOIN
+    city c ON jl.cityid = c.cityid
+        INNER JOIN
+    state s ON c.stateid = s.stateid
+WHERE
+    j.jobid = pinjobid
+GROUP BY j.jobid;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `update_applicant_count` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -757,6 +942,87 @@ BEGIN
 							WHERE jobid = job_id
 							AND appstatusid = 2)
 	WHERE jobid = job_id;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `update_jobpost` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_jobpost`(IN pinjobid int, IN pvarposition varchar(255),IN pvartype varchar(45),
+IN pvardescription longtext, IN pinjobstatusid int, IN pinvacancycount int, IN pinorgid int, 
+IN pvarcategory varchar(45), IN pvarstate varchar(200), IN pvarcity varchar(200), OUT result INT)
+BEGIN
+	DECLARE errno varchar(500);
+	DECLARE varjobid, varcityexists, varcityid int;
+    DECLARE front1,front2 TEXT DEFAULT NULL;
+	DECLARE frontlen1,frontlen2 INT DEFAULT NULL;
+	DECLARE varcityname,varstatename TEXT DEFAULT NULL;
+	DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN
+		GET CURRENT DIAGNOSTICS CONDITION 1 errno = MESSAGE_TEXT;
+		SELECT errno AS MYSQL_ERROR;
+		ROLLBACK;
+		SET result = 1;
+	END;
+    SET AUTOCOMMIT = 0;
+    SET FOREIGN_KEY_CHECKS=0;
+    START TRANSACTION;
+	SET result = 0;
+    
+    UPDATE job SET 
+    position=pvarposition, 
+    type=pvartype, 
+    description=pvardescription, 
+    publishdate=IF(pinjobstatusid=2, now(), null), 
+    jobstatusid=pinjobstatusid, 
+    vacancycount=pinvacancycount, 
+    orgid=pinorgid, 
+    category=pvarcategory
+	where jobid=pinjobid;
+    
+    IF result = 0 THEN
+		DELETE from joblocation where jobid=pinjobid;
+		iterator:
+		LOOP  
+			IF LENGTH(TRIM(pvarcity)) = 0 OR pvarcity IS NULL THEN
+				LEAVE iterator;
+			END IF;
+            
+			SET front1 = SUBSTRING_INDEX(pvarcity,',',1);
+            SET front2 = SUBSTRING_INDEX(pvarstate,',',1);
+			
+            SET frontlen1 = LENGTH(front1);
+            SET frontlen2 = LENGTH(front2);
+			
+            SET varcityname = TRIM(front1);
+            SET varstatename = TRIM(front2);
+            
+            SELECT count(*) into varcityexists FROM city where lower(cityname)=lower(varcityname);
+            IF varcityexists=1 THEN
+				SELECT cityid into varcityid FROM city where lower(cityname)=lower(varcityname);
+                INSERT INTO `joblocation`(cityid, jobid) VALUES (varcityid, pinjobid);
+			ELSEIF varcityexists > 1 THEN
+				SELECT cityid into varcityid FROM city where lower(cityname)=lower(varcityname)
+                AND lower(statename)=lower(varstatename);
+                INSERT INTO `joblocation`(cityid, jobid) VALUES (varcityid, pinjobid);
+            END IF;
+            
+            SET pvarcity = INSERT(pvarcity,1,frontlen1 + 1,'');
+            SET pvarstate = INSERT(pvarstate,1,frontlen2 + 1,'');
+		END LOOP;
+    END IF;
+    COMMIT;
+    SET FOREIGN_KEY_CHECKS=1;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -843,4 +1109,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-29  0:02:33
+-- Dump completed on 2022-04-29  1:10:07
