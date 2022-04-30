@@ -68,7 +68,7 @@ router.get('/new-job', async function (req, res, next) {
   console.log(req.session.useremail);
   if (req.session.userid && req.session.role && req.session.role == 2) {
     let jobs = null;
-    res.render('newjob', { jobs: jobs, session: req.session });
+    res.render('newjob', { job: jobs, session: req.session });
   }
   else {
     res.redirect('/');
@@ -115,7 +115,7 @@ router.post('/createjob', async function (req, res, next) {
       jobstatus = req.body.status;
       state = req.body.state;
       city = req.body.city;
-      orgid = 0,
+      orgid = req.body.orgid,
       category = req.body.category;
       userid = req.session.userid;
       let result = null;
@@ -131,6 +131,88 @@ router.post('/createjob', async function (req, res, next) {
         res.send();
       }
     }
+  }
+  else {
+    res.redirect('/');
+  }
+});
+
+router.post('/job/:id/update', async function (req, res, next) {
+  console.log("IN MY JOBS");
+  console.log(req.session.useremail);
+  if (req.session.userid && req.session.role && req.session.role == 2) {
+    if (Object.keys(req.body).length == 0) {
+      res.status(400)
+      res.send("Empty request body");
+    }
+    else {
+      console.log(req.body);
+      jobid = req.body.jobid;
+      position = req.body.position;
+      type = req.body.type;
+      desc = req.body.description;
+      vacancycount = req.body.vacancycount;
+      jobstatus = req.body.status;
+      state = req.body.state;
+      city = req.body.city;
+      orgid = req.body.orgid,
+      category = req.body.category;
+      userid = req.session.userid;
+      let result = null;
+      result = await db.updateJob(jobid, position, type, desc, jobstatus, vacancycount, orgid, category, state, city);
+      //TODO Error checking
+      //res.redirect('/my-jobs');
+      if (result == undefined || result.err != undefined) {
+        res.status(400)
+        res.send(result);
+      }
+      else {
+        res.status(200);
+        res.send();
+      }
+    }
+  }
+  else {
+    res.redirect('/');
+  }
+});
+
+router.post('/job/:id/deletejob', async function (req, res, next) {
+  console.log("IN MY JOBS");
+  console.log(req.session.useremail);
+  if (req.session.userid && req.session.role && req.session.role == 2) {
+    if (Object.keys(req.body).length == 0) {
+      res.status(400)
+      res.send("Empty request body");
+    }
+    else {
+      console.log(req.body);
+      jobid = req.body.jobid;
+      let result = null;
+      result = await db.deleteJob(jobid);
+      //TODO Error checking
+      //res.redirect('/my-jobs');
+      if (result == undefined || result.err != undefined) {
+        res.status(400)
+        res.send(result);
+      }
+      else {
+        res.status(200);
+        res.send();
+      }
+    }
+  }
+  else {
+    res.redirect('/');
+  }
+});
+
+router.get('/job/:id/edit', async function (req, res, next) {
+  if (req.params.id && req.session.role && req.session.role == 2) {
+    let job = null;
+    job = await db.getJobById(req.params.id);
+    applications = await db.getApplicationsOfJobById(req.params.id);
+    res.render('newjob', { job: job, session: req.session });
   }
   else {
     res.redirect('/');

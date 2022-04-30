@@ -16,7 +16,7 @@
                             <a class="badge bg-secondary text-decoration-none link-light" href="#!">Location: <%=
                                     job.location %></a>
                                     <a class="badge bg-secondary text-decoration-none link-light" href="#!"><%= job.type %></a>
-                            <div class="text-muted fst-italic mb-2">Posted on <%= new Date(job.publishdate).toLocaleString("en-US") %></div>
+                            <div class="text-muted fst-italic mb-2"><% if(job.publishdate != null) {%>Published on <%= new Date(job.publishdate).toLocaleString("en-US") %> <% } %></div>
                             <p class="card-text">
                                 <%- job.description %>
                             </p>

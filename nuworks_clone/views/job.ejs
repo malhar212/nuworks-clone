@@ -17,7 +17,7 @@
                   <!-- Post title-->
                   <h1 class="fw-bolder mb-1"><%= job.position %></h1>
                   <!-- Post meta content-->
-                  <div class="text-muted fst-italic mb-2">Posted on <%= new Date(job.publishdate).toLocaleString("en-US") %> by <%= job.name %></div>
+                  <div class="text-muted fst-italic mb-2"><% if(job.publishdate != null) {%>Published on <%= new Date(job.publishdate).toLocaleString("en-US") %> <% } %> by <%= job.name %></div>
                   <!-- Post categories-->
                   <a class="badge bg-secondary text-decoration-none link-light" href="#!"><%= job.category %></a>
                   <a class="badge bg-secondary text-decoration-none link-light" href="#!">Vacancy <%= job.vacancycount %></a>

@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <p>Welcome <%= session.username %>
                 </p>
-                <%- include('./partials/jobform',{ job: {}}) %>
+                <%- include('./partials/jobform',{ job: job }) %>
             </div>
 
 
@@ -15,8 +15,21 @@
 
                 <% include ./partials/scripts %>
 
-
+                    <script
+                        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
                     <script>
+                        let job = <% if (job != null) {%><% - JSON.stringify(job) %><% } else {%> null;<% } %>
+
+                            $(document).ready(function () {
+                                $('#jobform').validate();
+                                /*                             if (job != null) {
+                                                                mult = job.location.split(',');
+                                                                if (mult.length > 0) {
+                                                                    mult[0].split('-');
+                                                                }
+                                                                $('#idstate').val(state_code);
+                                                            } */
+                            });
 
                         $("#idstate").change(function (e) {
                             var $select = $('#idcity');
@@ -30,44 +43,57 @@
                             });
                         });
 
+
                         $("button").click(function (e) {
-                            e.preventDefault();
-                            console.log($(this).attr("id"));
-                            statusText = $(this).attr("id");
-                            if (statusText == "save") {
-                                status = 1
-                            }
-                            else {
-                                status = 2
-                            }
-                            $.ajax({
-                                type: "POST",
-                                url: "/createjob",
-                                data: {
-                                    //jobid : $("#idjobid").val(),
-                                    position: $("#idposition").val(),
-                                    type: $("#idtype").val(),
-                                    description: $("#iddescription").val(),
-                                    vacancycount: $("#idvacancycount").val(),
-                                    status: $("#idstatus").val(),
-                                    state: $("#idstate option:selected").val(),
-                                    city: $("#idcity option:selected").val(),
-                                    category: $("#idcategory").val()
-                                },
-                                success: function (result) {
-                                    alert('Succesfull');
-                                    if (result.redirect) {
-                                        window.location.href = "/my-jobs";
-                                    }
-                                    else {
-                                        // Process the expected results...
-                                    }
-                                },
-                                error: function (result) {
-                                    console.log(result);
-                                    alert('error: ' + result.responseText);
+                            if (!$("#jobform").valid()) { // Not Valid
+                                alert("Required fields must be filled out");
+                            } else {
+                                e.preventDefault();
+                                console.log($(this).attr("id"));
+                                statusText = $(this).attr("id");
+                                jobid = $("#idjobid").val();
+                                if (statusText == "save") {
+                                    status = 1
                                 }
-                            });
+                                else {
+                                    status = 2
+                                }
+                                if (jobid != undefined && jobid != '') {
+
+                                    if (statusText == "delete") {
+                                        url = "/job/" + jobid + "/deletejob";
+                                    }
+                                    else { url = "/job/" + jobid + "/update"; }
+                                }
+
+                                else {
+                                    url = "/createjob";
+                                }
+                                $.ajax({
+                                    type: "POST",
+                                    url: url,
+                                    data: {
+                                        jobid: jobid,
+                                        position: $("#idposition").val(),
+                                        type: $("#idtype").val(),
+                                        description: $("#iddescription").val(),
+                                        vacancycount: $("#idvacancycount").val(),
+                                        status: status,
+                                        state: $("#idstate option:selected").val(),
+                                        city: $("#idcity option:selected").val(),
+                                        orgid: $("#orgid").val(),
+                                        category: $("#idcategory").val()
+                                    },
+                                    success: function (result) {
+                                        alert('Succesfull');
+                                        window.location.href = "/my-jobs";
+                                    },
+                                    error: function (result) {
+                                        console.log(result);
+                                        alert('error: ' + result.responseText);
+                                    }
+                                });
+                            }
                         });
                     </script>
     </body>

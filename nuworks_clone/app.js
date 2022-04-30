@@ -37,10 +37,8 @@ var logout = function(req,res,next){
 };
 
 var login = async function(req,res,next){
-  console.log("Hello");
   console.log(req.body)
   if(req.body.email != null && req.body.password != null){
-    console.log("Hello 12");
     let user = await db.validateLogin(req.body.email, req.body.password);
     if (user != undefined) {
       req.session.loggedIn=true;
@@ -58,9 +56,20 @@ var login = async function(req,res,next){
   }
 };
 
+var checkDbConnection = async function(req,res,next) {
+    let resp = await db.testConnection(req.body.email, req.body.password);
+    if (resp.err != undefined) {
+      res.status(500);
+      res.render('error',{title:'Application Down. No Database Connection', session:req.session, error: {status:500}, message: 'Application Down. No Database Connection' });
+    }
+    else {
+      next();
+    }
+};
+
 app.get('/logout', logout);
 app.post('/loginSubmit', login);
-app.use('/', checkUser, indexRouter);
+app.use('/', checkDbConnection, checkUser, indexRouter);
 app.use('/users', usersRouter);
 //app.use('/apply', checkUser, applyRouter);
 

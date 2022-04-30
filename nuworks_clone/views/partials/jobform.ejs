@@ -1,17 +1,17 @@
 <div class="container">
-    <form>
+    <form id="jobform">
         <div class="d-none form-group row">
             <label for="text" class="col-4 col-form-label">Job id</label>
             <div class="col-8">
-                <input id="idjobid" name="text" placeholder="Enter job id" type="text" value="<%= job.jobid %>"
+                <input id="idjobid" name="idjobid" placeholder="Enter job id" type="text" value="<% if(job != null) {%><%= job.jobid %><% } %>"
                     class="form-control">
             </div>
         </div>
         <div class="form-group row">
             <label for="text1" class="col-4 col-form-label">Position</label>
             <div class="col-8">
-                <input required id="idposition" name="text1" placeholder="Enter position" type="text" maxlength="255"
-                    value="<%= job.position %>" class="form-control">
+                <input id="idposition" name="idposition" placeholder="Enter position" type="text" maxlength="255"
+                    value="<% if(job != null) {%><%= job.position %><% } %>" class="form-control" required>
             </div>
         </div>
         <br>
@@ -30,7 +30,7 @@
             <label for="textarea" class="col-4 col-form-label">Description</label>
             <div class="col-8">
                 <textarea required id="iddescription" name="textarea" cols="40" rows="5" class="form-control" maxlength="255"
-                    value="<%= job.description %>" aria-describedby="textareaHelpBlock"></textarea>
+                 aria-describedby="textareaHelpBlock"><% if(job != null) {%><%= job.description %><% } %></textarea>
             </div>
         </div>
         <br>
@@ -38,10 +38,9 @@
             <label for="text2" class="col-4 col-form-label">Vacancy count</label>
             <div class="col-8">
                 <input required id="idvacancycount" name="text2" placeholder="Enter vacancy count" type="text"
-                    value="<%= job.vacancycount %>" class="form-control">
+                    value="<% if(job != null) {%><%= job.vacancycount %><% } %>" class="form-control">
             </div>
         </div>
-        //TODO Status in submit
         <div class="form-group row">
             <label for="select1" class="col-4 col-form-label">State</label>
             <div class="col-8">
@@ -66,18 +65,62 @@
             </div>
         </div>
         <div class="form-group row">
+            <label for="select2" class="col-4 col-form-label">Organization</label>
+            <div class="col-8">
+        <select required id='orgid' name = 'orgid' class="custom-select" >
+            <option value="2">KForce Recruitment</option>
+            <option value="3">KevaHealth Inc</option>
+            <option value="4">Activ Surgical</option>
+            <option value="5">Brigham and Women's Hospital</option>
+            <option value="6">Cambridge Health Alliance</option>
+            <option value="7">Power of Patients</option>
+            <option value="8">Arbour HRI Hospital</option>
+            <option value="9">Lighthouse Lab Services</option>
+            <option value="10">The Massachusetts Eye and Ear Infirmary</option>
+            <option value="11">Beth Israel Deaconess Healthcare</option>
+            <option value="12">Johnson & Johnson</option>
+            <option value="13">South End Community Health Center</option>
+            <option value="14">Massachusetts General Hospital</option>
+            <option value="15">Boston Children's Hospital</option>
+            <option value="16">Internships Down Under</option>
+            <option value="17">Meaden & Moore</option>
+            <option value="18">E.J. Callahan & Associates</option>
+            <option value="19">Grassi & Co.</option>
+            <option value="20">Monotype</option>
+            <option value="21">Apple</option>
+            <option value="22">Hasbro</option>
+            <option value="23">IFactory Inc.</option>
+            <option value="24">Adapt Agency</option>
+            <option value="25">Greene Naftali</option>
+            <option value="26">Playa Society</option>
+            <option value="27">Interiology Design Co.</option>
+            <option value="28">Earnix</option>
+            <option value="29">QSimulate</option>
+            <option value="30">Powerhouse Dynamics (PhD)</option>
+            <option value="31">Zilla Security</option>
+            <option value="32">Zeta Surgical</option>
+            <option value="33">Funnel.io</option>
+          </select>
+        </div>
+          </div>
+        <div class="form-group row">
             <label for="idcategory" class="col-4 col-form-label">Category</label>
             <div class="col-8">
-                <input required id="idcategory" name="idcategory" placeholder="Enter Industry" type="text" class="custom-select">
+                <input required id="idcategory" name="idcategory" placeholder="Enter Industry" type="text" value="<% if(job != null) {%><%= job.category %><% } %>"  class="custom-select">
             </div>
         </div>
         <div class="form-group row">
-            <div class="offset-4 col-3">
-                <button id="submit" name="submit" type="submit" class="btn btn-primary">Submit</button>
+            <div class="offset-4 col-2">
+                <button id="submit" name="submit" type="submit" class="btn btn-primary">Publish</button>
             </div>
-            <div class="col-3">
+            <div class="col-2">
                 <button id="save" name="save" type="submit" class="btn btn-primary">Save Draft</button>
             </div>
+            <% if(job != null && job.jobid != null) {%>
+                <div class="col-2">
+                    <button id="delete" name="delete" type="submit" class="btn btn-danger">Delete</button>
+                </div>
+            <% } %>
         </div>
     </form>
 </div>

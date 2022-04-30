@@ -21,11 +21,11 @@
                 <option value="2">Published</option>
               </select>
             </div>
-            <div class="input-group">
+            <div style="display: none" id="sortGroup"  class="input-group">
               <span class="input-group-text">Sort By:</span>
-              <select id="sortOption" class="form-select" aria-label="Default sort">
-                <option selected value="asc">Latest</option>
-                <option value="desc">Oldest</option>
+              <select id="sortOption" class="form-select"  aria-label="Default sort">
+                <option selected value="desc">Latest</option>
+                <option value="asc">Oldest</option>
               </select>
             </div>
           </div>
@@ -42,6 +42,9 @@
           <script>
             $("select").change(function (e) {
               filter = $("#filterOption option:selected").val();
+              if (filter == "2") {
+                $("#sortGroup").show();
+              } 
               sort = $("#sortOption option:selected").val();
               $.ajax({
                 url: '/recruiter_jobs',
