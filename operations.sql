@@ -16,36 +16,76 @@ Call check_user('kh@kforce.com','abc12345');
 -- get all published jobs from job table for the applicants page
 drop procedure IF EXISTS get_all_published_jobs;
 DELIMITER $$
-CREATE procedure get_all_published_jobs() 
+CREATE procedure get_all_published_jobs(IN pvarposition varchar(255), IN pincityid int, IN ordering varchar(10)) 
 BEGIN
-SELECT 
-    j.jobid,
-    o.name,
-    j.position,
-    j.type,
-    j.description,
-    j.publishdate,
-    j.vacancycount,
-    j.category,
-    GROUP_CONCAT(CONCAT(c.cityname, '-', s.statename)) AS location
+DECLARE varcityname varchar(100);
+SET @varposition = pvarposition;
+SET @selectstart = 'SELECT 
+    *
 FROM
-    job j
-        INNER JOIN
-    organization o ON j.orgid = o.orgid
-        INNER JOIN
-    job_app_status js ON j.jobstatusid = js.statusid
-        LEFT OUTER JOIN
-    joblocation jl ON j.jobid = jl.jobid
-        INNER JOIN
-    city c ON jl.cityid = c.cityid
-        INNER JOIN
-    state s ON c.stateid = s.stateid
-WHERE
-    LOWER(js.statusdesc) = 'submitted'
-GROUP BY j.jobid;
+    (SELECT 
+        j.jobid,
+            o.name,
+            j.position,
+            j.type,
+            j.description,
+            j.publishdate,
+            j.vacancycount,
+            j.category,
+            GROUP_CONCAT(CONCAT(c.cityname, ''-'', s.statename)) AS location
+    FROM
+        job j
+    INNER JOIN organization o ON j.orgid = o.orgid
+    INNER JOIN job_app_status js ON j.jobstatusid = js.statusid
+    LEFT OUTER JOIN joblocation jl ON j.jobid = jl.jobid
+    INNER JOIN city c ON jl.cityid = c.cityid
+    INNER JOIN state s ON c.stateid = s.stateid
+    WHERE
+        LOWER(js.statusid) = 2';
+    
+IF pvarposition IS NOT NULL THEN
+	SET @positionfilter = " AND lower(position) LIKE lower(CONCAT( '%',?,'%'))";
+ELSE 
+	SET @positionfilter = ' ';
+END IF;
+
+SET @grouping = ' GROUP BY j.jobid';
+
+IF lower(ordering) = 'asc' THEN 
+	SET @sortorder= ' ORDER BY j.publishdate ASC';
+ELSE
+	SET @sortorder= ' ORDER BY j.publishdate DESC';
+END IF;
+
+SET @selectmiddle = ' ) pub_jobs';
+
+IF pincityid <> 0 THEN
+	SELECT cityname INTO varcityname FROM city where cityid = pincityid;
+    SET @varcity = varcityname;
+    SET @cityfilter = " WHERE lower(pub_jobs.location) LIKE lower(CONCAT( '%',?,'%'))";
+ELSE 
+	SET @cityfilter = ' ';
+END IF;
+
+SET @selectend = ';';
+
+SET @s = CONCAT (@selectstart, @positionfilter, @grouping, @sortorder, @selectmiddle, @cityfilter, @selectend); 
+SELECT @s;
+PREPARE stmt FROM @s;
+IF pvarposition IS NOT NULL AND pincityid <> 0 THEN
+	EXECUTE stmt USING @varposition, @varcity;
+ELSEIF pvarposition IS NOT NULL AND pincityid = 0 THEN
+	EXECUTE stmt USING @varposition;
+ELSEIF pvarposition IS NULL AND pincityid <> 0 THEN
+	EXECUTE stmt USING @varcity;
+ELSE 
+	EXECUTE stmt;
+END IF;
+DEALLOCATE PREPARE stmt;
+
 END$$
 DELIMITER ; 
-Call get_all_published_jobs();
+Call get_all_published_jobs(null,3,'asc');
 
 
 -- get all applications saved and submitted by the applicant
