@@ -150,15 +150,15 @@ CREATE procedure update_saved_application(IN appid int, IN pvarskills varchar(45
 IN pvarexperience varchar(45), IN pinstatus int, IN pvardocname varchar(200), IN pvardocurl varchar(200),
 OUT result INT) 
 BEGIN
-	DECLARE errno varchar(500);
+	-- DECLARE errno varchar(500);
     DECLARE front1,front2 TEXT DEFAULT NULL;
 	DECLARE frontlen1,frontlen2 INT DEFAULT NULL;
 	DECLARE vardocname,vardocurl TEXT DEFAULT NULL;
 	DECLARE appid_var INT;
 	DECLARE EXIT HANDLER FOR SQLEXCEPTION
     BEGIN
-		GET CURRENT DIAGNOSTICS CONDITION 1 errno = MESSAGE_TEXT;
-		SELECT errno AS MYSQL_ERROR;
+		-- GET CURRENT DIAGNOSTICS CONDITION 1 errno = MESSAGE_TEXT;
+		-- SELECT errno AS MYSQL_ERROR;
 		ROLLBACK;
 		SET result = 1;
 	END;
@@ -353,10 +353,12 @@ END IF;
 
 SET @grouping = ' GROUP BY j.jobid';
 
-IF lower(ordering) = 'asc' THEN 
+IF lower(ordering) = 'asc' AND pinjobstatusid = 2 THEN 
 	SET @sortorder= ' ORDER BY j.publishdate asc;';
-ELSE
+ELSEIF lower(ordering) = 'desc' AND pinjobstatusid = 2 THEN
 	SET @sortorder= ' ORDER BY j.publishdate desc;';
+ELSE
+	SET @sortorder= ' ORDER BY j.jobid desc;';
 END IF;
 SET @s = CONCAT (@selectstmt, @filter, @grouping, @sortorder); 
 SELECT @s;
@@ -369,7 +371,7 @@ END IF;
 DEALLOCATE PREPARE stmt;
 END$$
 DELIMITER ; 
-Call get_all_usercreated_jobs(1,0,'desc');
+Call get_all_usercreated_jobs(1,2,'desc');
 
 
 -- get all submitted applications for a job id
@@ -443,15 +445,15 @@ CREATE procedure create_new_jobpost(IN pvarposition varchar(255),IN pvartype var
 IN pinjobstatusid int, IN pinvacancycount int, IN pinorgid int, IN pvarcategory varchar(45), IN pinuserid int,
 IN pvarstate varchar(200), IN pvarcity varchar(200), OUT result INT) 
 BEGIN
-	DECLARE errno varchar(500);
-	DECLARE varjobid, varcityexists, varcityid int;
+	-- DECLARE errno varchar(500);
+	DECLARE varjobid, varcityexists, varcityid, varorgid int;
     DECLARE front1,front2 TEXT DEFAULT NULL;
 	DECLARE frontlen1,frontlen2 INT DEFAULT NULL;
 	DECLARE varcityname,varstatename TEXT DEFAULT NULL;
 	DECLARE EXIT HANDLER FOR SQLEXCEPTION
     BEGIN
-		GET CURRENT DIAGNOSTICS CONDITION 1 errno = MESSAGE_TEXT;
-		SELECT errno AS MYSQL_ERROR;
+		-- GET CURRENT DIAGNOSTICS CONDITION 1 errno = MESSAGE_TEXT;
+		-- SELECT errno AS MYSQL_ERROR;
 		ROLLBACK;
 		SET result = 1;
 	END;
@@ -460,8 +462,14 @@ BEGIN
     START TRANSACTION;
 	SET result = 0;
     
+    IF pinorgid = 0 THEN
+		SELECT orgid INTO varorgid from user WHERE userid = pinuserid;
+	ELSE 
+		SET varorgid = pinorgid;
+    END IF;
+    
 	INSERT INTO job (position, type, description, publishdate, jobstatusid, vacancycount, orgid, category, userid)
-	VALUES (pvarposition, pvartype, pvardescription, IF(pinjobstatusid=2, now(), null), pinjobstatusid, pinvacancycount, pinorgid, pvarcategory, pinuserid);
+	VALUES (pvarposition, pvartype, pvardescription, IF(pinjobstatusid=2, now(), null), pinjobstatusid, pinvacancycount, varorgid, pvarcategory, pinuserid);
     
     SELECT LAST_INSERT_ID() INTO varjobid; 
   
@@ -512,15 +520,15 @@ CREATE procedure update_jobpost(IN pinjobid int, IN pvarposition varchar(255),IN
 IN pvardescription longtext, IN pinjobstatusid int, IN pinvacancycount int, IN pinorgid int, 
 IN pvarcategory varchar(45), IN pvarstate varchar(200), IN pvarcity varchar(200), OUT result INT) 
 BEGIN
-	DECLARE errno varchar(500);
-	DECLARE varjobid, varcityexists, varcityid int;
+	-- DECLARE errno varchar(500);
+	DECLARE varjobid, varcityexists, varcityid, varorgid int;
     DECLARE front1,front2 TEXT DEFAULT NULL;
 	DECLARE frontlen1,frontlen2 INT DEFAULT NULL;
 	DECLARE varcityname,varstatename TEXT DEFAULT NULL;
 	DECLARE EXIT HANDLER FOR SQLEXCEPTION
     BEGIN
-		GET CURRENT DIAGNOSTICS CONDITION 1 errno = MESSAGE_TEXT;
-		SELECT errno AS MYSQL_ERROR;
+		-- GET CURRENT DIAGNOSTICS CONDITION 1 errno = MESSAGE_TEXT;
+		-- SELECT errno AS MYSQL_ERROR;
 		ROLLBACK;
 		SET result = 1;
 	END;
@@ -529,6 +537,12 @@ BEGIN
     START TRANSACTION;
 	SET result = 0;
     
+    IF pinorgid = 0 THEN
+		SELECT orgid INTO varorgid from job WHERE jobid=pinjobid;
+	ELSE
+		SET varorgid = pinorgid;
+    END IF;
+    
     UPDATE job SET 
     position=pvarposition, 
     type=pvartype, 
@@ -536,7 +550,7 @@ BEGIN
     publishdate=IF(pinjobstatusid=2, now(), null), 
     jobstatusid=pinjobstatusid, 
     vacancycount=pinvacancycount, 
-    orgid=pinorgid, 
+    orgid=varorgid, 
     category=pvarcategory
 	where jobid=pinjobid;
     
