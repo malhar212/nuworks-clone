@@ -1,0 +1,22 @@
+<div class="container">
+    <% if (applications != null && applications.length != 0) { %>
+    <ul class="list-group">
+        
+      <% applications.forEach(function(app){ %>
+          <li class="list-group-item">
+              <div class="card">
+                  <div class="card-header">
+                      <%= app.firstname %> <%= app.lastname %>
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">Email: <%= app.email %></h5>
+                      <a href="/app/<%= app.appid %>/view" class="btn btn-primary">View</a>
+                  </div>
+              </div>
+          </li>
+      <% }); %>
+  </ul>
+  <% } else { %>
+    <h4>No applications Yet</h4>
+    <% } %>
+</div>

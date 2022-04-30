@@ -1,0 +1,33 @@
+<div class="container">
+        <% if (jobs !=null && jobs.length !=0) { %>
+        <ul class="list-group">
+            <% jobs.forEach(function(job){ %>
+                <li class="list-group-item">
+                    <div class="card">
+                        <div class="card-header">
+                            <%= job.position %>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= job.organization %>
+                            </h5>
+                            <a class="badge bg-primary text-decoration-none link-light" href="#!">Applicants: <%=
+                                    job.applicantcount %></a>
+                            <a class="badge bg-secondary text-decoration-none link-light" href="#!">Location: <%=
+                                    job.location %></a>
+                                    <a class="badge bg-secondary text-decoration-none link-light" href="#!"><%= job.type %></a>
+                            <div class="text-muted fst-italic mb-2">Posted on <%= new Date(job.publishdate).toLocaleString("en-US") %></div>
+                            <p class="card-text">
+                                <%- job.description %>
+                            </p>
+                            <a href="/job/<%= job.jobid %>/edit" class="btn btn-primary">Edit</a>
+                            <a href="/job/<%= job.jobid %>" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </li>
+                <% }); %>
+        </ul>
+        <% } else { %>
+            <h2>No Jobs Yet</h2>
+        <% } %>
+</div>

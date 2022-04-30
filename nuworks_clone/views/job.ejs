@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<% include ./partials/head %>
+
+  <body class="d-flex flex-column min-vh-100">
+    <% include ./partials/nav %>
+      <div class="container-fluid">
+        <p>Welcome <%= session.username %>
+        </p>
+        <div class="container mt-5">
+          <% if (job != null && Object.keys(job).length != 0) { %>
+            <div class="col-lg-8">
+              <!-- Post content-->
+              <article>
+                <!-- Post header-->
+                <header class="mb-4">
+                  <!-- Post title-->
+                  <h1 class="fw-bolder mb-1"><%= job.position %></h1>
+                  <!-- Post meta content-->
+                  <div class="text-muted fst-italic mb-2">Posted on <%= new Date(job.publishdate).toLocaleString("en-US") %> by <%= job.name %></div>
+                  <!-- Post categories-->
+                  <a class="badge bg-secondary text-decoration-none link-light" href="#!"><%= job.category %></a>
+                  <a class="badge bg-secondary text-decoration-none link-light" href="#!">Vacancy <%= job.vacancycount %></a>
+                  <a class="badge bg-primary text-decoration-none link-light" href="#!">Applicants: <%=
+                    job.applicantcount %></a>
+                  <a class="badge bg-secondary text-decoration-none link-light" href="#!"><%= job.type %></a>
+                  <a class="badge bg-secondary text-decoration-none link-light" href="#!">Location <%= job.location %></a>
+                  <a class="badge bg-secondary text-decoration-none link-light" href="#!">Status <%= job.statusdesc %></a>
+                </header>
+                <!-- Post content-->
+                <section class="mb-5">
+                  <%- job.description %>
+                  <!-- <p class="fs-5 mb-4">Science is an enterprise that should be cherished as an activity of the free
+                    human mind. Because it transforms who we are, how we live, and it gives us an understanding of our
+                    place in the universe.</p>
+                  <p class="fs-5 mb-4">The universe is large and old, and the ingredients for life as we know it are
+                    everywhere, so there's no reason to think that Earth would be unique in that regard. Whether of not
+                    the life became intelligent is a different question, and we'll see if we find that.</p>
+                  <p class="fs-5 mb-4">If you get asteroids about a kilometer in size, those are large enough and carry
+                    enough energy into our system to disrupt transportation, communication, the food chains, and that
+                    can be a really bad day on Earth.</p>
+                  <h2 class="fw-bolder mb-4 mt-5">I have odd cosmic thoughts every day</h2>
+                  <p class="fs-5 mb-4">For me, the most fascinating interface is Twitter. I have odd cosmic thoughts
+                    every day and I realized I could hold them to myself or share them with people who might be
+                    interested.</p>
+                  <p class="fs-5 mb-4">Venus has a runaway greenhouse effect. I kind of want to know what happened there
+                    because we're twirling knobs here on Earth without knowing the consequences of it. Mars once had
+                    running water. It's bone dry today. Something bad happened there as well.</p> -->
+                </section>
+              </article>
+            </div>
+            <% } else { %>
+              <h2>No Such Job. Please go to home page to search for another</h2>
+            <% } %>
+            <% if (session.role == 2) { %>
+                    <!-- TODO LIST ALL APPLICATIONS if published-->
+                    <h3>Applications</h3>
+                    <%- include('./partials/applicationslist',{ applications: applications}) %>
+            <% } %>
+            <% if (session.role == 1) { %>
+                    <!-- TODO APPLICATION FORM-->
+                    <h3>Apply</h3>
+                    <% include ./partials/applicationform %>
+            <% } %>
+        </div>
+      </div>
+
+
+      <% include ./partials/footer %>
+
+        <% include ./partials/scripts %>
+        <% if (session.role == 1) { %>
+        <script>
+          $("#submit").click(function(e) {
+              //debugger
+             console.log($("#idjobid").val())
+              $.ajax({
+                  type: "POST",
+                  url: "/createApplication",
+                  data: { 
+                      applicationid: $("#applicationid").val(),
+                      skills: $("#idskills").val(),
+                      education: $("#ideducation").val(),
+                      experience: $("#idexperience").val(),
+                      status: $("#idstatus").val(),
+                      jobid: $("#idjobid").val(),
+                      userid: $("#iduserid").val(),
+                      docname: $("#iddocname").val()
+                  },
+                  dataType: "json",
+                  success: function(result) {
+                      alert('ok');
+                  },
+                  error: function(result) {
+                      alert('error' + result);
+                  }
+              });
+          });
+          </script>
+          <% } %>
+  </body>
+
+</html>

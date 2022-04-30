@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<% include ./partials/head %>
+
+  <body class="d-flex flex-column min-vh-100">
+    <% include ./partials/nav %>
+      <div class="container-fluid">
+        <p>Welcome <%= session.username %>
+        </p>
+        <div id="joblistContainer" class="container">
+          <h2>Your Applications</h2>
+          <%- include('./partials/joblist',{jobs: jobs}) %>
+        </div>
+      </div>
+
+
+      <% include ./partials/footer %>
+
+      <% include ./partials/scripts %>
+      <script>
+        $("button").click(function(e) {
+            debugger
+           
+            $.ajax({
+                type: "POST",
+                url: "/pages/test",
+                data: { 
+                   
+                    skills: $("#idskills").val(),
+                    education: $("#ideducation").val(),
+                    experience: $("#idexperience").val(),
+                    status: $("#idstatus").val(),
+                    jobid: $("#idjobid").val(),
+                    userid: $("#iduserid").val(),
+                    docname: $("#iddocname").val()
+                },
+                success: function(result) {
+                    alert('ok');
+                },
+                error: function(result) {
+                    alert('error');
+                }
+            });
+        });
+        </script>
+  </body>
+
+</html>

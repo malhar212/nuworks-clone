@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({secret:'app-secret',cookie:{maxAge:6000}}));
+app.use(session({secret:'app-secret',cookie:{maxAge:31536000000}}));
 
 var checkUser = function(req,res,next){
   if(req.session.loggedIn){
@@ -33,7 +33,7 @@ var checkUser = function(req,res,next){
 var logout = function(req,res,next){
   req.session.loggedIn=false;
   req.session.destroy();
-  res.render('login',{title:"Login Here", session:req.session});
+  res.redirect('/');
 };
 
 var login = async function(req,res,next){
@@ -44,9 +44,10 @@ var login = async function(req,res,next){
     let user = await db.validateLogin(req.body.email, req.body.password);
     if (user != undefined) {
       req.session.loggedIn=true;
-      req.session.role=user.role_id;
-      req.session.username=user.first_name;
+      req.session.role=user.roleid;
+      req.session.username=user.name;
       req.session.useremail=user.email;
+      req.session.userid = user.userid;
       res.redirect('/');
     }
     else {
@@ -57,7 +58,7 @@ var login = async function(req,res,next){
   }
 };
 
-app.post('/logout', logout);
+app.get('/logout', logout);
 app.post('/loginSubmit', login);
 app.use('/', checkUser, indexRouter);
 app.use('/users', usersRouter);

@@ -1,0 +1,58 @@
+<div class="container">
+    <form>
+        <div class="d-none form-group mb-3">
+            <label for="text" class="col-4 col-form-label">Application Id</label> 
+            <div class="col-8">
+              <input id="applicationid" name="applicationid" placeholder="Application Id" value = "<%= session.applicationid %>" type="text" class="form-control">
+            </div>
+          </div>
+        <div class="form-group mb-3">
+          <label for="text" class="col-4 col-form-label">Skills</label> 
+          <div class="col-8">
+            <input id="idskills" name="idskills" maxlength="45" placeholder="Enter skills" type="text" class="form-control">
+          </div>
+        </div>
+        <div class="form-group mb-3">
+          <label for="text2" class="col-4 col-form-label">Education</label> 
+          <div class="col-8">
+            <input id="ideducation" name="ideducation" maxlength="45" placeholder="Enter education" type="text" class="form-control">
+          </div>
+        </div>
+        <div class="form-group mb-3">
+          <label for="text3" class="col-4 col-form-label">Experience</label> 
+          <div class="col-8">
+            <input id="idexperience" name="idexperience" maxlength="45" placeholder="Enter experience" type="text" class="form-control">
+          </div>
+        </div>
+        <div class="form-group mb-3">
+          <label for="text4" class="col-4 col-form-label">Status</label> 
+          <div class="col-8">
+            <input id="idstatus" name="idstatus" maxlength="45" placeholder="Enter status" type="text" class="form-control">
+          </div>
+        </div>
+        <div class="form-group mb-3">
+          <label for="text1" class="col-4 col-form-label">Job id</label> 
+          <div class="col-8">
+            <input id="idjobid" name="idjobid" placeholder="Enter job id" type="text" value = "<%= job.jobid%>" class="form-control">
+          </div>
+        </div>
+        <div class="form-group mb-3">
+          <label for="text5" class="col-4 col-form-label">User Id</label> 
+          <div class="col-8">
+            <input id="iduserid" name="iduserid" placeholder="Enter user Id" type="text" value = "<%= session.userid%>" class="form-control">
+          </div>
+        </div>
+        <div class="form-group mb-3">
+          <label for="text6" class="col-4 col-form-label">Document name</label> 
+          <div class="col-8">
+            <input id="iddocname" maxlength="45" name="iddocname" placeholder="Enter document name" type="text" class="form-control">
+          </div>
+        </div> 
+        <div class="form-group mb-3">
+          <div class="offset-4 col-8">
+            <button id="save" type="submit" class="btn btn-primary">Save</button>
+            <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+</div>

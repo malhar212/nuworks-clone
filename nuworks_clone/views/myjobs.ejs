@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<% include ./partials/head %>
+
+  <body class="d-flex flex-column min-vh-100">
+    <% include ./partials/nav %>
+      <div class="container-fluid">
+        <p>Welcome <%= session.username %>
+        </p>
+        <div class="row panel">
+          <h2>Your Jobs</h2>
+          <div class="col-sm-3">
+            <a href="/new-job" class="btn btn-primary">New job</a>
+          </div>
+          <div class="col-sm-3">
+            <div class="input-group">
+              <span class="input-group-text">Filter By:</span>
+              <select id="filterOption" class="form-select" aria-label="Default filter">
+                <option selected value="0">All</option>
+                <option value="1">Saved</option>
+                <option value="2">Published</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <span class="input-group-text">Sort By:</span>
+              <select id="sortOption" class="form-select" aria-label="Default sort">
+                <option selected value="asc">Latest</option>
+                <option value="desc">Oldest</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div id="joblistContainer" class="container">
+          <%- include('./partials/recruiterjobs',{jobs: jobs}) %>
+        </div>
+      </div>
+
+
+      <% include ./partials/footer %>
+
+        <% include ./partials/scripts %>
+          <script>
+            $("select").change(function (e) {
+              filter = $("#filterOption option:selected").val();
+              sort = $("#sortOption option:selected").val();
+              $.ajax({
+                url: '/recruiter_jobs',
+                type: 'POST',
+                data: {
+                  status: filter,
+                  ordering: sort
+                },
+                success: function (response) {
+                  var template = response['template'];
+                  var jobs = response['jobs'];
+                  var html = ejs.render(template, { jobs: jobs });
+                  console.log(html)
+                  $('#joblistContainer').html(html);
+                },
+                error: function (jqXHR, textStatus, err) {
+                  alert('text status ' + textStatus + ', err ' + err)
+                }
+              })
+            });
+          </script>
+  </body>
+
+</html>

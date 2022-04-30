@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<% include ./partials/head %>
+
+    <body class="d-flex flex-column min-vh-100">
+        <% include ./partials/nav %>
+            <div class="container-fluid">
+                <p>Welcome <%= session.username %>
+                </p>
+                <%- include('./partials/jobform',{ job: {}}) %>
+            </div>
+
+
+            <% include ./partials/footer %>
+
+                <% include ./partials/scripts %>
+
+
+                    <script>
+
+                        $("#idstate").change(function (e) {
+                            var $select = $('#idcity');
+                            $select.find('option').remove();
+                            cities = [{ "cityid": 1, "cityname": "Lowell", "stateid": "MA" }, { "cityid": 2, "cityname": "Lexington", "stateid": "MA" }, { "cityid": 3, "cityname": "Boston", "stateid": "MA" }, { "cityid": 4, "cityname": "Cambridge", "stateid": "MA" }, { "cityid": 5, "cityname": "Portland", "stateid": "ME" }, { "cityid": 6, "cityname": "Brookline", "stateid": "MA" }, { "cityid": 7, "cityname": "Charlotte", "stateid": "NC" }, { "cityid": 8, "cityname": "Newton Center", "stateid": "MA" }, { "cityid": 9, "cityname": "Raritan", "stateid": "NJ" }, { "cityid": 10, "cityname": "Sydney", "stateid": "FL" }, { "cityid": 11, "cityname": "Wakefield", "stateid": "MA" }, { "cityid": 12, "cityname": "Needham", "stateid": "MA" }, { "cityid": 13, "cityname": "Woburn", "stateid": "MA" }, { "cityid": 14, "cityname": "Vancouver", "stateid": "WA" }, { "cityid": 15, "cityname": "Providence", "stateid": "RI" }, { "cityid": 16, "cityname": "Pawtucket", "stateid": "RI" }, { "cityid": 17, "cityname": "New York", "stateid": "NY" }, { "cityid": 18, "cityname": "Watertown", "stateid": "MA" }, { "cityid": 19, "cityname": "Waltham", "stateid": "MA" }, { "cityid": 20, "cityname": "Newton", "stateid": "MA" }];
+                            state = $("#idstate option:selected").val();
+                            console.log(state);
+                            const temp = cities.filter(city => city.stateid == state);
+                            temp.forEach(function (obj) {
+                                $select.append('<option value=' + obj.cityname + '>' + obj.cityname + '</option>');
+                            });
+                        });
+
+                        $("button").click(function (e) {
+                            e.preventDefault();
+                            console.log($(this).attr("id"));
+                            statusText = $(this).attr("id");
+                            if (statusText == "save") {
+                                status = 1
+                            }
+                            else {
+                                status = 2
+                            }
+                            $.ajax({
+                                type: "POST",
+                                url: "/createjob",
+                                data: {
+                                    //jobid : $("#idjobid").val(),
+                                    position: $("#idposition").val(),
+                                    type: $("#idtype").val(),
+                                    description: $("#iddescription").val(),
+                                    vacancycount: $("#idvacancycount").val(),
+                                    status: $("#idstatus").val(),
+                                    state: $("#idstate option:selected").val(),
+                                    city: $("#idcity option:selected").val(),
+                                    category: $("#idcategory").val()
+                                },
+                                success: function (result) {
+                                    alert('Succesfull');
+                                    if (result.redirect) {
+                                        window.location.href = "/my-jobs";
+                                    }
+                                    else {
+                                        // Process the expected results...
+                                    }
+                                },
+                                error: function (result) {
+                                    console.log(result);
+                                    alert('error: ' + result.responseText);
+                                }
+                            });
+                        });
+                    </script>
+    </body>
+
+</html>

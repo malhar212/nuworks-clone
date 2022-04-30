@@ -60,6 +60,22 @@
       <% include ./partials/footer %>
 
       <% include ./partials/scripts %>
+      <script>
+        $.ajax({
+            url: '/jobs_search',
+            type: 'POST',
+            cache: true,
+            success: function (response) {
+                var template = response['template'];
+                var jobs = response['jobs'];
+                var html = ejs.render(template, {jobs: jobs});
+                $('#joblistContainer').html(html);
+            },
+            error: function (jqXHR, textStatus, err) {
+                alert('text status ' + textStatus + ', err ' + err)
+            }
+        })
+    </script>
   </body>
 
 </html>

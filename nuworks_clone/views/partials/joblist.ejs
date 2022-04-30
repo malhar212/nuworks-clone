@@ -1,5 +1,7 @@
 <div class="container">
+    <% if (jobs != null && jobs.length != 0) { %>
     <ul class="list-group">
+        
       <% jobs.forEach(function(job){ %>
           <li class="list-group-item">
               <div class="card">
@@ -7,12 +9,15 @@
                       <%= job.position %>
                   </div>
                   <div class="card-body">
-                      <h5 class="card-title"><%= job.organization %></h5>
-                      <p class="card-text"><%= job.description %></p>
-                      <a href="#" class="btn btn-primary">Apply</a>
+                      <h5 class="card-title"><%= job.name %></h5>
+                      <p class="card-text"><%- job.description %></p>
+                      <a href="/job/<%= job.jobid %>" class="btn btn-primary">Apply</a>
                   </div>
               </div>
           </li>
       <% }); %>
   </ul>
+  <% } else { %>
+    <h2>No Jobs Yet</h2>
+    <% } %>
 </div>
