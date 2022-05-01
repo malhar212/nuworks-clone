@@ -74,8 +74,6 @@
                         $("#delete").click(function (e) {
                             e.preventDefault();
                             appid = $(this).val();
-                            console.log(appid);
-                            debugger
                             url = "/app/" + appid + "/deleteapp";
                             $.ajax({
                                 type: "POST",
@@ -85,7 +83,6 @@
                                     window.location.href = "/my-applications";
                                 },
                                 error: function (result) {
-                                    console.log(result);
                                     alert('error: ' + result.responseText);
                                 }
                             });

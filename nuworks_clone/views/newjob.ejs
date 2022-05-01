@@ -36,7 +36,6 @@
                             $select.find('option').remove();
                             cities = [{ "cityid": 1, "cityname": "Lowell", "stateid": "MA" }, { "cityid": 2, "cityname": "Lexington", "stateid": "MA" }, { "cityid": 3, "cityname": "Boston", "stateid": "MA" }, { "cityid": 4, "cityname": "Cambridge", "stateid": "MA" }, { "cityid": 5, "cityname": "Portland", "stateid": "ME" }, { "cityid": 6, "cityname": "Brookline", "stateid": "MA" }, { "cityid": 7, "cityname": "Charlotte", "stateid": "NC" }, { "cityid": 8, "cityname": "Newton Center", "stateid": "MA" }, { "cityid": 9, "cityname": "Raritan", "stateid": "NJ" }, { "cityid": 10, "cityname": "Sydney", "stateid": "FL" }, { "cityid": 11, "cityname": "Wakefield", "stateid": "MA" }, { "cityid": 12, "cityname": "Needham", "stateid": "MA" }, { "cityid": 13, "cityname": "Woburn", "stateid": "MA" }, { "cityid": 14, "cityname": "Vancouver", "stateid": "WA" }, { "cityid": 15, "cityname": "Providence", "stateid": "RI" }, { "cityid": 16, "cityname": "Pawtucket", "stateid": "RI" }, { "cityid": 17, "cityname": "New York", "stateid": "NY" }, { "cityid": 18, "cityname": "Watertown", "stateid": "MA" }, { "cityid": 19, "cityname": "Waltham", "stateid": "MA" }, { "cityid": 20, "cityname": "Newton", "stateid": "MA" }];
                             state = $("#idstate option:selected").val();
-                            console.log(state);
                             const temp = cities.filter(city => city.stateid == state);
                             temp.forEach(function (obj) {
                                 $select.append('<option value=' + obj.cityname + '>' + obj.cityname + '</option>');
@@ -49,7 +48,6 @@
                                 alert("Required fields must be filled out");
                             } else {
                                 e.preventDefault();
-                                console.log($(this).attr("id"));
                                 statusText = $(this).attr("id");
                                 jobid = $("#idjobid").val();
                                 if (statusText == "save") {
@@ -88,7 +86,6 @@
                                         window.location.href = "/my-jobs";
                                     },
                                     error: function (result) {
-                                        console.log(result);
                                         alert('error: ' + result.responseText);
                                     }
                                 });

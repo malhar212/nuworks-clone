@@ -20,7 +20,6 @@ var operations = {
         }
         console.log(position,city,ordering);
         const [rows, fields] = await db.query('CALL get_all_published_jobs(?,?,?)',[position, city, ordering]);
-        console.log(rows[1]);
         if (rows != undefined && rows[1] != undefined)
             return rows[1];
         return undefined;
@@ -49,8 +48,6 @@ var operations = {
         }
         const [rows, fields] = await db.query('CALL get_all_usercreated_jobs(?,?,?)', [id, jobstatus, sort]);
         console.log("Getting jobs by recruiter");
-        console.log(id);
-        console.log(rows[1]);
         if (rows != undefined && rows[1] != undefined)
             return rows[1];
         return undefined;
@@ -71,9 +68,7 @@ var operations = {
             return { err: error.message };
         }
         const [row1, field1] = await db.query('SELECT @result;');
-        console.log("Getting jobs by recruiter");
-        //console.log(rows);
-        console.log(row1);
+        console.log("Creating job");
         if (row1 != undefined && row1[0] != undefined)
             return row1[0];
         return { err: 'Some error occured. Please try again' };
@@ -87,18 +82,14 @@ var operations = {
             orgid = 0
         }
         result = null
-        console.log(jobid)
         try {
             const [rows, fields] = await db.query('CALL update_jobpost(?,?,?,?,?,?,?,?,?,?,@result); SELECT @result;', [jobid, position, type, desc, jobstatus, vacancycount, orgid, category, state, city]);
-            console.log(rows);
         }
         catch (error) {
             return { err: error.message };
         }
         const [row1, field1] = await db.query('SELECT @result;');
         console.log("Updating jobs by recruiter");
-        //console.log(rows);
-        console.log(row1);
         if (row1 != undefined && row1[0] != undefined)
             return row1[0];
         return { err: 'Some error occured. Please try again' };
@@ -106,18 +97,14 @@ var operations = {
 
     deleteJob: async (jobid) => {
         result = null
-        console.log(jobid)
         try {
             const [rows, fields] = await db.query('CALL delete_job(?,@result); SELECT @result;', [jobid]);
-            console.log(rows);
         }
         catch (error) {
             return { err: error.message };
         }
         const [row1, field1] = await db.query('SELECT @result;');
-        console.log("Updating jobs by recruiter");
-        //console.log(rows);
-        console.log(row1);
+        console.log("Delete jobs by recruiter");
         if (row1 != undefined && row1[0] != undefined)
             return row1[0];
         return { err: 'Some error occured. Please try again' };
@@ -126,8 +113,6 @@ var operations = {
     getApplicationsByApplicant: async (id) => {
         const [rows, fields] = await db.query('CALL get_all_applicant_applications(?)', [id]);
         console.log("Getting applications by user");
-        console.log(id);
-        console.log(rows[0]);
         if (rows != undefined && rows[0] != undefined)
             return rows[0];
         return undefined;
@@ -136,8 +121,6 @@ var operations = {
     getApplicationById: async (id) => {
         const [rows, fields] = await db.query('CALL get_application_data(?)', [id]);
         console.log("Getting application by id");
-        console.log(id);
-        console.log(rows[0][0]);
         if (rows != undefined && rows[0] != undefined && rows[0][0] != undefined)
             return rows[0][0];
         return undefined;
@@ -151,7 +134,6 @@ var operations = {
         try {
             const [rows, fields] = await db.query('CALL create_new_application(?,?,?,?,?,?,?,?,@result); SELECT @result;', [userid, skills, education, experience, appstatus, jobid, docname, docurl]);
             console.log("Creating Application");
-            console.log(rows);
             if (rows != undefined && rows[0] != undefined)
                 return rows[0];
         }
@@ -163,10 +145,9 @@ var operations = {
 
     deleteApp: async (appid) => {
         result = null
-        console.log(appid)
         try {
             const [rows, fields] = await db.query('CALL delete_application(?,@result); SELECT @result;', [appid]);
-            console.log(rows);
+            console.log("Deleting Application");
             if (rows != undefined && rows[1] != undefined)
                 return rows[1];
         }

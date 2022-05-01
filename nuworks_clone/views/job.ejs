@@ -71,12 +71,10 @@
               <h2>No Such Job. Please go to home page to search for another</h2>
               <% } %>
                 <% if (session.role==2) { %>
-                  <!-- TODO LIST ALL APPLICATIONS if published-->
                   <h3>Applications</h3>
                   <%- include('./partials/applicationslist',{ applications: applications}) %>
                     <% } %>
                       <% if (session.role==1) { %>
-                        <!-- TODO APPLICATION FORM-->
                         <% if (app != null) { %>
                           <h3><a href = "/app/<%= app.applicationid %>/view">You have already applied to this job </a></h3>
                           <% } else { %>

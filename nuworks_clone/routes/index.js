@@ -19,9 +19,6 @@ router.get('/job/:id', async function (req, res, next) {
     let application = null;
     job = await db.getJobById(req.params.id);
     applications = await db.getApplicationsOfJobById(req.params.id);
-    console.log(req.session.useremail);
-    console.log(applications)
-    console.log(applications.find((app)=> app.email == req.session.useremail));
     app = applications.find((app)=> app.email == req.session.useremail);
     res.render('job', { job: job, session: req.session, applications: applications, app: app });
   }
@@ -32,7 +29,6 @@ router.get('/job/:id', async function (req, res, next) {
 
 router.get('/my-jobs', async function (req, res, next) {
   console.log("IN MY JOBS");
-  console.log(req.session.useremail);
   if (req.session.userid && req.session.role && req.session.role == 2) {
     let jobs = null;
     jobs = await db.getJobsByRecruiter(req.session.userid);
@@ -46,7 +42,6 @@ router.get('/my-jobs', async function (req, res, next) {
 router.post('/recruiter_jobs', async function (req, res) {
   try {
     let jobs = null
-    console.log(req.body);
     console.log("IN Rec JOBS");
     if (req.session.userid && req.session.role && req.session.role == 2) {
       let jobs = null;
@@ -70,8 +65,7 @@ router.post('/recruiter_jobs', async function (req, res) {
 });
 
 router.get('/new-job', async function (req, res, next) {
-  console.log("IN MY JOBS");
-  console.log(req.session.useremail);
+  console.log("IN New JOB");
   if (req.session.userid && req.session.role && req.session.role == 2) {
     let jobs = null;
     res.render('newjob', { job: jobs, session: req.session });
@@ -85,7 +79,6 @@ router.post('/jobs_search', async function (req, res) {
   try {
     const league_name = req.body.league_name;
     let jobs = null
-    console.log(req.body);
     if (Object.keys(req.body).length == 0) {
       jobs = await db.getAllJobs();
     }
@@ -108,15 +101,13 @@ router.post('/jobs_search', async function (req, res) {
 });
 
 router.post('/createjob', async function (req, res, next) {
-  console.log("IN MY JOBS");
-  console.log(req.session.useremail);
+  console.log("Create JOB");
   if (req.session.userid && req.session.role && req.session.role == 2) {
     if (Object.keys(req.body).length == 0) {
       res.status(400)
       res.send("Empty request body");
     }
     else {
-      console.log(req.body);
       position = req.body.position;
       type = req.body.type;
       desc = req.body.description;
@@ -129,8 +120,6 @@ router.post('/createjob', async function (req, res, next) {
       userid = req.session.userid;
       let result = null;
       result = await db.createJob(position, type, desc, jobstatus, vacancycount, orgid, category, userid, state, city);
-      //TODO Error checking
-      //res.redirect('/my-jobs');
       if (result == undefined || result.err != undefined) {
         res.status(400)
         res.send(result);
@@ -147,8 +136,7 @@ router.post('/createjob', async function (req, res, next) {
 });
 
 router.post('/job/:id/update', async function (req, res, next) {
-  console.log("IN MY JOBS");
-  console.log(req.session.useremail);
+  console.log("IN Update JOBS");
   if (req.session.userid && req.session.role && req.session.role == 2) {
     if (Object.keys(req.body).length == 0) {
       res.status(400)
@@ -169,8 +157,6 @@ router.post('/job/:id/update', async function (req, res, next) {
       userid = req.session.userid;
       let result = null;
       result = await db.updateJob(jobid, position, type, desc, jobstatus, vacancycount, orgid, category, state, city);
-      //TODO Error checking
-      //res.redirect('/my-jobs');
       if (result == undefined || result.err != undefined) {
         res.status(400)
         res.send(result);
@@ -199,8 +185,6 @@ router.post('/job/:id/deletejob', async function (req, res, next) {
       jobid = req.body.jobid;
       let result = null;
       result = await db.deleteJob(jobid);
-      //TODO Error checking
-      //res.redirect('/my-jobs');
       if (result == undefined || result.err != undefined) {
         res.status(400)
         res.send(result);
@@ -294,8 +278,6 @@ router.post('/createapplication', async function (req, res, next) {
         userid = req.session.userid;
       let result = null;
       result = await db.createApplication(userid, skills, education, experience, appstatus, jobid, docname, docurl);
-      //TODO Error checking
-      //res.redirect('/my-jobs');
       if (result == undefined || result.err != undefined) {
         res.status(400)
         res.send(result);

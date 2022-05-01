@@ -37,7 +37,6 @@ var logout = function(req,res,next){
 };
 
 var login = async function(req,res,next){
-  console.log(req.body)
   if(req.body.email != null && req.body.password != null){
     let user = await db.validateLogin(req.body.email, req.body.password);
     if (user != undefined) {
