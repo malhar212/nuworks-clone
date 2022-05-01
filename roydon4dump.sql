@@ -528,15 +528,15 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_new_jobpost`(IN pvarposition
 IN pinjobstatusid int, IN pinvacancycount int, IN pinorgid int, IN pvarcategory varchar(45), IN pinuserid int,
 IN pvarstate varchar(200), IN pvarcity varchar(200), OUT result INT)
 BEGIN
-	DECLARE errno varchar(500);
-	DECLARE varjobid, varcityexists, varcityid int;
+	-- DECLARE errno varchar(500);
+	DECLARE varjobid, varcityexists, varcityid, varorgid int;
     DECLARE front1,front2 TEXT DEFAULT NULL;
 	DECLARE frontlen1,frontlen2 INT DEFAULT NULL;
 	DECLARE varcityname,varstatename TEXT DEFAULT NULL;
 	DECLARE EXIT HANDLER FOR SQLEXCEPTION
     BEGIN
-		GET CURRENT DIAGNOSTICS CONDITION 1 errno = MESSAGE_TEXT;
-		SELECT errno AS MYSQL_ERROR;
+		-- GET CURRENT DIAGNOSTICS CONDITION 1 errno = MESSAGE_TEXT;
+		-- SELECT errno AS MYSQL_ERROR;
 		ROLLBACK;
 		SET result = 1;
 	END;
@@ -545,8 +545,14 @@ BEGIN
     START TRANSACTION;
 	SET result = 0;
     
+    IF pinorgid = 0 THEN
+		SELECT orgid INTO varorgid from user WHERE userid = pinuserid;
+	ELSE 
+		SET varorgid = pinorgid;
+    END IF;
+    
 	INSERT INTO job (position, type, description, publishdate, jobstatusid, vacancycount, orgid, category, userid)
-	VALUES (pvarposition, pvartype, pvardescription, IF(pinjobstatusid=2, now(), null), pinjobstatusid, pinvacancycount, pinorgid, pvarcategory, pinuserid);
+	VALUES (pvarposition, pvartype, pvardescription, IF(pinjobstatusid=2, now(), null), pinjobstatusid, pinvacancycount, varorgid, pvarcategory, pinuserid);
     
     SELECT LAST_INSERT_ID() INTO varjobid; 
   
@@ -734,33 +740,73 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `get_all_published_jobs`()
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_all_published_jobs`(IN pvarposition varchar(255), IN pincityid int, IN ordering varchar(10))
 BEGIN
-SELECT 
-    j.jobid,
-    o.name,
-    j.position,
-    j.type,
-    j.description,
-    j.publishdate,
-    j.vacancycount,
-    j.category,
-    GROUP_CONCAT(CONCAT(c.cityname, '-', s.statename)) AS location
+DECLARE varcityname varchar(100);
+SET @varposition = pvarposition;
+SET @selectstart = 'SELECT 
+    *
 FROM
-    job j
-        INNER JOIN
-    organization o ON j.orgid = o.orgid
-        INNER JOIN
-    job_app_status js ON j.jobstatusid = js.statusid
-        LEFT OUTER JOIN
-    joblocation jl ON j.jobid = jl.jobid
-        INNER JOIN
-    city c ON jl.cityid = c.cityid
-        INNER JOIN
-    state s ON c.stateid = s.stateid
-WHERE
-    LOWER(js.statusdesc) = 'submitted'
-GROUP BY j.jobid;
+    (SELECT 
+        j.jobid,
+            o.name,
+            j.position,
+            j.type,
+            j.description,
+            j.publishdate,
+            j.vacancycount,
+            j.category,
+            GROUP_CONCAT(CONCAT(c.cityname, ''-'', s.statename)) AS location
+    FROM
+        job j
+    INNER JOIN organization o ON j.orgid = o.orgid
+    INNER JOIN job_app_status js ON j.jobstatusid = js.statusid
+    LEFT OUTER JOIN joblocation jl ON j.jobid = jl.jobid
+    INNER JOIN city c ON jl.cityid = c.cityid
+    INNER JOIN state s ON c.stateid = s.stateid
+    WHERE
+        LOWER(js.statusid) = 2';
+    
+IF pvarposition IS NOT NULL THEN
+	SET @positionfilter = " AND lower(position) LIKE lower(CONCAT( '%',?,'%'))";
+ELSE 
+	SET @positionfilter = ' ';
+END IF;
+
+SET @grouping = ' GROUP BY j.jobid';
+
+IF lower(ordering) = 'asc' THEN 
+	SET @sortorder= ' ORDER BY j.publishdate ASC';
+ELSE
+	SET @sortorder= ' ORDER BY j.publishdate DESC';
+END IF;
+
+SET @selectmiddle = ' ) pub_jobs';
+
+IF pincityid <> 0 THEN
+	SELECT cityname INTO varcityname FROM city where cityid = pincityid;
+    SET @varcity = varcityname;
+    SET @cityfilter = " WHERE lower(pub_jobs.location) LIKE lower(CONCAT( '%',?,'%'))";
+ELSE 
+	SET @cityfilter = ' ';
+END IF;
+
+SET @selectend = ';';
+
+SET @s = CONCAT (@selectstart, @positionfilter, @grouping, @sortorder, @selectmiddle, @cityfilter, @selectend); 
+SELECT @s;
+PREPARE stmt FROM @s;
+IF pvarposition IS NOT NULL AND pincityid <> 0 THEN
+	EXECUTE stmt USING @varposition, @varcity;
+ELSEIF pvarposition IS NOT NULL AND pincityid = 0 THEN
+	EXECUTE stmt USING @varposition;
+ELSEIF pvarposition IS NULL AND pincityid <> 0 THEN
+	EXECUTE stmt USING @varcity;
+ELSE 
+	EXECUTE stmt;
+END IF;
+DEALLOCATE PREPARE stmt;
+
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -816,10 +862,12 @@ END IF;
 
 SET @grouping = ' GROUP BY j.jobid';
 
-IF lower(ordering) = 'asc' THEN 
+IF lower(ordering) = 'asc' AND pinjobstatusid = 2 THEN 
 	SET @sortorder= ' ORDER BY j.publishdate asc;';
-ELSE
+ELSEIF lower(ordering) = 'desc' AND pinjobstatusid = 2 THEN
 	SET @sortorder= ' ORDER BY j.publishdate desc;';
+ELSE
+	SET @sortorder= ' ORDER BY j.jobid desc;';
 END IF;
 SET @s = CONCAT (@selectstmt, @filter, @grouping, @sortorder); 
 SELECT @s;
@@ -962,15 +1010,15 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `update_jobpost`(IN pinjobid int, IN
 IN pvardescription longtext, IN pinjobstatusid int, IN pinvacancycount int, IN pinorgid int, 
 IN pvarcategory varchar(45), IN pvarstate varchar(200), IN pvarcity varchar(200), OUT result INT)
 BEGIN
-	DECLARE errno varchar(500);
-	DECLARE varjobid, varcityexists, varcityid int;
+	-- DECLARE errno varchar(500);
+	DECLARE varjobid, varcityexists, varcityid, varorgid int;
     DECLARE front1,front2 TEXT DEFAULT NULL;
 	DECLARE frontlen1,frontlen2 INT DEFAULT NULL;
 	DECLARE varcityname,varstatename TEXT DEFAULT NULL;
 	DECLARE EXIT HANDLER FOR SQLEXCEPTION
     BEGIN
-		GET CURRENT DIAGNOSTICS CONDITION 1 errno = MESSAGE_TEXT;
-		SELECT errno AS MYSQL_ERROR;
+		-- GET CURRENT DIAGNOSTICS CONDITION 1 errno = MESSAGE_TEXT;
+		-- SELECT errno AS MYSQL_ERROR;
 		ROLLBACK;
 		SET result = 1;
 	END;
@@ -979,6 +1027,12 @@ BEGIN
     START TRANSACTION;
 	SET result = 0;
     
+    IF pinorgid = 0 THEN
+		SELECT orgid INTO varorgid from job WHERE jobid=pinjobid;
+	ELSE
+		SET varorgid = pinorgid;
+    END IF;
+    
     UPDATE job SET 
     position=pvarposition, 
     type=pvartype, 
@@ -986,7 +1040,7 @@ BEGIN
     publishdate=IF(pinjobstatusid=2, now(), null), 
     jobstatusid=pinjobstatusid, 
     vacancycount=pinvacancycount, 
-    orgid=pinorgid, 
+    orgid=varorgid, 
     category=pvarcategory
 	where jobid=pinjobid;
     
@@ -1109,4 +1163,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-29  1:10:07
+-- Dump completed on 2022-04-30 19:59:22
