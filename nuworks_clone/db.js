@@ -4,7 +4,7 @@ var pool = mysql.createPool({
   port: '3306',
   user     : 'root',  //Should not be in code from security pov
   password : 'malhar', //Should not be in code from security pov
-  database: 'roydon7',
+  database: 'mahantmpereirar',
   multipleStatements: true
 });
 
