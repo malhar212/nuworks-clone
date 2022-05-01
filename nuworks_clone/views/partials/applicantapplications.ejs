@@ -6,10 +6,16 @@
           <li class="list-group-item">
               <div class="card">
                   <div class="card-header">
-                      <%= app.firstname %> <%= app.lastname %>
+                      <%= app.position %>
                   </div>
                   <div class="card-body">
-                      <h5 class="card-title">Email: <%= app.email %></h5>
+                      <h5 class="card-title"><%= app.name %></h5>
+                      <a class="badge bg-secondary text-decoration-none link-light" href="#!">Status <%= app.statusdesc %></a>
+                      <div class="text-muted fst-italic mb-2">
+                        <% if(app.submitdate !=null) {%>Submitted on <%= new
+                                Date(app.submitdate).toLocaleString("en-US") %>
+                                <% } %>
+                    </div>
                       <a href="/app/<%= app.applicationid %>/view" class="btn btn-primary">View</a>
                   </div>
               </div>

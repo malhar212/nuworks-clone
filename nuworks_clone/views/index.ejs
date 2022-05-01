@@ -13,20 +13,11 @@
               <div class="card p-3 py-4">
                 <h5>Find a job</h5>
                 <div class="row g-3 mt-2">
-                  <div class="col-md-3">
-                      <select class="form-select btn btn-primary" type="button"
-                        id="industry" aria-placeholder="Industry" placeholder="Industry">
-                        <option value="Any">Any</option>
-                        <option class="dropdown-item" value="Computer Science">Computer Science</option>
-                        <option class="dropdown-item" value="Media">Media</option>
-                        <option class="dropdown-item" value="Medical">Medical</option>
-                      </select>
-                  </div>
                   <div class="col-sm-6">
                     <input id="position" type="text" class="form-control" placeholder="Job Title"
                       aria-label="Job Title">
                   </div>
-                  <div class="col-md-3"> <button class="btn btn-primary btn-block">Search Results</button> </div>
+                  <div class="col-md-3"> <button id="search" class="btn btn-primary btn-block">Search Results</button> </div>
                 </div>
                 <div class="mt-3"> <a data-bs-toggle="collapse" data-toggle="collapse" href="#collapseForm"
                     role="button" aria-expanded="false" aria-controls="collapseExample" class="advanced"> Advance Search
@@ -34,17 +25,85 @@
                   <div class="collapse" id="collapseForm">
                     <div class="card card-body">
                       <div class="row">
-                        <div class="col-sm"> 
-                          <input type="text" id="organization" placeholder="Organization" aria-label="City" class="form-control"> </div>
-                        <div class="col-sm">
-                          <input type="text" id="city" class="form-control" placeholder="City" aria-label="City">
-                        </div>
-                        <div class="col-sm">
-                          <input type="text" id="state" class="form-control" placeholder="State" aria-label="State">
+                        <!-- <div class="col-sm-4 form-group">
+                          <label for="select2" class="col-4 col-form-label">Organization</label>
+                          <select required id='orgid' name='orgid' class="form-select">
+                            <option value="orgid">Organization</option>
+                            <option value="2">KForce Recruitment</option>
+                            <option value="3">KevaHealth Inc</option>
+                            <option value="4">Activ Surgical</option>
+                            <option value="5">Brigham and Women's Hospital</option>
+                            <option value="6">Cambridge Health Alliance</option>
+                            <option value="7">Power of Patients</option>
+                            <option value="8">Arbour HRI Hospital</option>
+                            <option value="9">Lighthouse Lab Services</option>
+                            <option value="10">The Massachusetts Eye and Ear Infirmary</option>
+                            <option value="11">Beth Israel Deaconess Healthcare</option>
+                            <option value="12">Johnson & Johnson</option>
+                            <option value="13">South End Community Health Center</option>
+                            <option value="14">Massachusetts General Hospital</option>
+                            <option value="15">Boston Children's Hospital</option>
+                            <option value="16">Internships Down Under</option>
+                            <option value="17">Meaden & Moore</option>
+                            <option value="18">E.J. Callahan & Associates</option>
+                            <option value="19">Grassi & Co.</option>
+                            <option value="20">Monotype</option>
+                            <option value="21">Apple</option>
+                            <option value="22">Hasbro</option>
+                            <option value="23">IFactory Inc.</option>
+                            <option value="24">Adapt Agency</option>
+                            <option value="25">Greene Naftali</option>
+                            <option value="26">Playa Society</option>
+                            <option value="27">Interiology Design Co.</option>
+                            <option value="28">Earnix</option>
+                            <option value="29">QSimulate</option>
+                            <option value="30">Powerhouse Dynamics (PhD)</option>
+                            <option value="31">Zilla Security</option>
+                            <option value="32">Zeta Surgical</option>
+                            <option value="33">Funnel.io</option>
+                          </select>
+                        </div> -->
+                        <div class="col-sm-4 form-group">
+                          <label for="select2" class="col-4 col-form-label">City</label>
+                          <select required id="idcity" name="select2" class="form-select">
+                            <option value="cityid">City</option>
+                            <option value="1">Lowell</option>
+                            <option value="2">Lexington</option>
+                            <option value="3">Boston</option>
+                            <option value="4">Cambridge</option>
+                            <option value="5">Portland</option>
+                            <option value="6">Brookline</option>
+                            <option value="7">Charlotte</option>
+                            <option value="8">Newton Center</option>
+                            <option value="9">Raritan</option>
+                            <option value="10">Sydney</option>
+                            <option value="11">Wakefield</option>
+                            <option value="12">Needham</option>
+                            <option value="13">Woburn</option>
+                            <option value="14">Vancouver</option>
+                            <option value="15">Providence</option>
+                            <option value="16">Pawtucket</option>
+                            <option value="17">New York</option>
+                            <option value="18">Watertown</option>
+                            <option value="19">Waltham</option>
+                            <option value="20">Newton</option>
+                          </select>
                         </div>
                       </div>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+            <div class="row panel">
+              <h2>Jobs</h2>
+              <div class="col-sm-3">
+                <div id="sortGroup" class="input-group">
+                  <span class="input-group-text">Sort By:</span>
+                  <select id="sortOption" class="form-select" aria-label="Default sort">
+                    <option selected value="desc">Latest</option>
+                    <option value="asc">Oldest</option>
+                  </select>
                 </div>
               </div>
             </div>
@@ -59,23 +118,80 @@
 
       <% include ./partials/footer %>
 
-      <% include ./partials/scripts %>
-      <script>
-        $.ajax({
-            url: '/jobs_search',
-            type: 'POST',
-            cache: true,
-            success: function (response) {
+        <% include ./partials/scripts %>
+          <script>
+            $.ajax({
+              url: '/jobs_search',
+              type: 'POST',
+              cache: true,
+              success: function (response) {
                 var template = response['template'];
                 var jobs = response['jobs'];
-                var html = ejs.render(template, {jobs: jobs});
+                var html = ejs.render(template, { jobs: jobs });
                 $('#joblistContainer').html(html);
-            },
-            error: function (jqXHR, textStatus, err) {
+              },
+              error: function (jqXHR, textStatus, err) {
                 alert('text status ' + textStatus + ', err ' + err)
-            }
-        })
-    </script>
+              }
+            })
+
+            $("#sortOption").change(function (e) {
+              sort = $("#sortOption option:selected").val();
+              position = $("#position").val();
+              city = $("#idcity option:selected").val();
+              if (city == 'cityid') {
+                city = 0;
+              }
+              $.ajax({
+                url: '/jobs_search',
+                type: 'POST',
+                data: {
+                  position: position,
+                  city: city,
+                  ordering: sort
+                },
+                cache: true,
+              success: function (response) {
+                var template = response['template'];
+                var jobs = response['jobs'];
+                var html = ejs.render(template, { jobs: jobs });
+                $('#joblistContainer').html(html);
+              },
+              error: function (jqXHR, textStatus, err) {
+                alert('text status ' + textStatus + ', err ' + err)
+              }
+              })
+            });
+
+            $("#search").click(function (e) {
+              debugger
+              sort = $("#sortOption option:selected").val();
+              position = $("#position").val();
+              city = $("#idcity option:selected").val();
+              if (city == 'cityid') {
+                city = 0;
+              }
+              $.ajax({
+                url: '/jobs_search',
+                type: 'POST',
+                data: {
+                  position: position,
+                  city: city,
+                  ordering: sort
+                },
+                cache: true,
+              success: function (response) {
+                var template = response['template'];
+                var jobs = response['jobs'];
+                var html = ejs.render(template, { jobs: jobs });
+                $('#joblistContainer').html(html);
+              },
+              error: function (jqXHR, textStatus, err) {
+                alert('text status ' + textStatus + ', err ' + err)
+              }
+              })
+            });
+          </script>
   </body>
 
 </html>

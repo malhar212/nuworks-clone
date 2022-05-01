@@ -18,7 +18,7 @@
         <div class="form-group row">
             <label for="select" class="col-4 col-form-label">Type</label>
             <div class="col-8">
-                <select required id="idtype" name="select" class="custom-select">
+                <select required id="idtype" name="select" class="form-select">
                     <option value="Co-op">Co-op</option>
                     <option value="Internship">Internship</option>
                     <option value="Full Time / Part Time">Full Time / Part Time</option>
@@ -44,7 +44,7 @@
         <div class="form-group row">
             <label for="select1" class="col-4 col-form-label">State</label>
             <div class="col-8">
-                <select required id="idstate" name="select1" class="custom-select">
+                <select required id="idstate" name="select1" class="form-select">
                     <option value="FL">Florida</option>
                     <option value="MA">Massachusetts</option>
                     <option value="ME">Maine</option>
@@ -59,7 +59,7 @@
         <div class="form-group row">
             <label for="select2" class="col-4 col-form-label">City</label>
             <div class="col-8">
-                <select required id="idcity" name="select2" class="custom-select">
+                <select required id="idcity" name="select2" class="form-select">
                     <option value="Sydney">Sydney</option>
                 </select>
             </div>
@@ -67,7 +67,7 @@
         <div class="form-group row">
             <label for="select2" class="col-4 col-form-label">Organization</label>
             <div class="col-8">
-        <select required id='orgid' name = 'orgid' class="custom-select" >
+        <select required id='orgid' name = 'orgid' class="form-select" >
             <option value="2">KForce Recruitment</option>
             <option value="3">KevaHealth Inc</option>
             <option value="4">Activ Surgical</option>
@@ -106,7 +106,7 @@
         <div class="form-group row">
             <label for="idcategory" class="col-4 col-form-label">Category</label>
             <div class="col-8">
-                <input required id="idcategory" name="idcategory" placeholder="Enter Industry" type="text" value="<% if(job != null) {%><%= job.category %><% } %>"  class="custom-select">
+                <input required id="idcategory" name="idcategory" placeholder="Enter Industry" type="text" value="<% if(job != null) {%><%= job.category %><% } %>"  class="form-select">
             </div>
         </div>
         <div class="form-group row">

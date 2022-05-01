@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<% include ./partials/head %>
+
+    <body class="d-flex flex-column min-vh-100">
+        <% include ./partials/nav %>
+            <div class="container-fluid">
+                <p>Welcome <%= session.username %>
+                </p>
+                <div class="container mt-5">
+                    <% if (application !=null && Object.keys(application).length !=0) { %>
+                        <div class="col-lg-8">
+                            <!-- Post content-->
+                            <article>
+                                <!-- Post header-->
+                                <header class="mb-4">
+                                    <!-- Post title-->
+                                    <h1 class="fw-bolder mb-1">
+                                        <%= application.position %> - <%= application.name %>
+                                    </h1>
+                                    <!-- Post meta content-->
+                                    <div class="text-muted fst-italic mb-2">
+                                        <% if(application.submitdate !=null) {%>Submitted on <%= new
+                                                Date(application.submitdate).toLocaleString("en-US") %>
+                                                <% } %>
+                                    </div>
+                                    <!-- Post categories-->
+                                    <a class="badge bg-secondary text-decoration-none link-light" href="#!">
+                                        <%= application.type %>
+                                    </a>
+                                </header>
+                                <% if(application.applicationid !=null && session.role==1) {%>
+                                    <div class="col-2">
+                                        <button id="delete" name="delete" value="<%= application.applicationid %>"
+                                            type="submit" class="btn btn-danger">Delete</button>
+                                    </div>
+                                    <br>
+
+                                    <% } %>
+                                        <!-- Post content-->
+                                        <hr>
+                                        <section class="mb-5">
+                                            <h4>Education</h4>
+                                            <p class="fs-5 mb-4">
+                                                <%= application.education %>
+                                            </p>
+                                            <h4>Experience</h4>
+                                            <p class="fs-5 mb-4">
+                                                <%= application.experience %>
+                                            </p>
+                                            <h4>Skills</h4>
+                                            <p class="fs-5 mb-4">
+                                                <%= application.skills %>
+                                            </p>
+                                            <h4>Documents</h4>
+                                            <p class="fs-5 mb-4">
+                                                <%= application.docname %>
+                                                    <%= application.docurl %>
+                                            </p>
+                                        </section>
+                            </article>
+                        </div>
+                        <% } else { %>
+                            <h2>No Such Application. Please go to home page to search for another</h2>
+                            <% } %>
+                </div>
+            </div>
+
+
+            <% include ./partials/footer %>
+
+                <% include ./partials/scripts %>
+                    <script>
+                        $("#delete").click(function (e) {
+                            e.preventDefault();
+                            appid = $(this).val();
+                            console.log(appid);
+                            debugger
+                            url = "/app/" + appid + "/deleteapp";
+                            $.ajax({
+                                type: "POST",
+                                url: url,
+                                success: function (result) {
+                                    alert('Successfull');
+                                    window.location.href = "/my-applications";
+                                },
+                                error: function (result) {
+                                    console.log(result);
+                                    alert('error: ' + result.responseText);
+                                }
+                            });
+                        });
+                    </script>
+    </body>
+
+</html>

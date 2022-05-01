@@ -6,31 +6,49 @@
     <% include ./partials/nav %>
       <div class="container-fluid">
         <p>Welcome <%= session.username %>
+            <%= session.role %>
         </p>
         <div class="container mt-5">
-          <% if (job != null && Object.keys(job).length != 0) { %>
+          <% if (job !=null && Object.keys(job).length !=0) { %>
             <div class="col-lg-8">
               <!-- Post content-->
               <article>
                 <!-- Post header-->
                 <header class="mb-4">
                   <!-- Post title-->
-                  <h1 class="fw-bolder mb-1"><%= job.position %></h1>
+                  <h1 class="fw-bolder mb-1">
+                    <%= job.position %>
+                  </h1>
                   <!-- Post meta content-->
-                  <div class="text-muted fst-italic mb-2"><% if(job.publishdate != null) {%>Published on <%= new Date(job.publishdate).toLocaleString("en-US") %> <% } %> by <%= job.name %></div>
+                  <div class="text-muted fst-italic mb-2">
+                    <% if(job.publishdate !=null) {%>Published on <%= new Date(job.publishdate).toLocaleString("en-US")
+                        %>
+                        <% } %> by <%= job.name %>
+                  </div>
                   <!-- Post categories-->
-                  <a class="badge bg-secondary text-decoration-none link-light" href="#!"><%= job.category %></a>
-                  <a class="badge bg-secondary text-decoration-none link-light" href="#!">Vacancy <%= job.vacancycount %></a>
+                  <a class="badge bg-secondary text-decoration-none link-light" href="#!">
+                    <%= job.category %>
+                  </a>
+                  <a class="badge bg-secondary text-decoration-none link-light" href="#!">Vacancy <%= job.vacancycount
+                      %></a>
+                      <% if (session.role==2) { %>
                   <a class="badge bg-primary text-decoration-none link-light" href="#!">Applicants: <%=
-                    job.applicantcount %></a>
-                  <a class="badge bg-secondary text-decoration-none link-light" href="#!"><%= job.type %></a>
-                  <a class="badge bg-secondary text-decoration-none link-light" href="#!">Location <%= job.location %></a>
-                  <a class="badge bg-secondary text-decoration-none link-light" href="#!">Status <%= job.statusdesc %></a>
+                      job.applicantcount %></a>
+                      <% } %>
+                  <a class="badge bg-secondary text-decoration-none link-light" href="#!">
+                    <%= job.type %>
+                  </a>
+                  <a class="badge bg-secondary text-decoration-none link-light" href="#!">Location <%= job.location %>
+                  </a>
+                  <% if (session.role==2) { %>
+                  <a class="badge bg-secondary text-decoration-none link-light" href="#!">Status <%= job.statusdesc %>
+                  </a>
+                  <% } %>
                 </header>
                 <!-- Post content-->
                 <section class="mb-5">
                   <%- job.description %>
-                  <!-- <p class="fs-5 mb-4">Science is an enterprise that should be cherished as an activity of the free
+                    <!-- <p class="fs-5 mb-4">Science is an enterprise that should be cherished as an activity of the free
                     human mind. Because it transforms who we are, how we live, and it gives us an understanding of our
                     place in the universe.</p>
                   <p class="fs-5 mb-4">The universe is large and old, and the ingredients for life as we know it are
@@ -51,17 +69,21 @@
             </div>
             <% } else { %>
               <h2>No Such Job. Please go to home page to search for another</h2>
-            <% } %>
-            <% if (session.role == 2) { %>
-                    <!-- TODO LIST ALL APPLICATIONS if published-->
-                    <h3>Applications</h3>
-                    <%- include('./partials/applicationslist',{ applications: applications}) %>
-            <% } %>
-            <% if (session.role == 1) { %>
-                    <!-- TODO APPLICATION FORM-->
-                    <h3>Apply</h3>
-                    <% include ./partials/applicationform %>
-            <% } %>
+              <% } %>
+                <% if (session.role==2) { %>
+                  <!-- TODO LIST ALL APPLICATIONS if published-->
+                  <h3>Applications</h3>
+                  <%- include('./partials/applicationslist',{ applications: applications}) %>
+                    <% } %>
+                      <% if (session.role==1) { %>
+                        <!-- TODO APPLICATION FORM-->
+                        <% if (app != null) { %>
+                          <h3><a href = "/app/<%= app.applicationid %>/view">You have already applied to this job </a></h3>
+                          <% } else { %>
+                        <h3>Apply</h3>
+                        <%- include('./partials/applicationform',{ job: job , session: session}) %>
+                        <% } %>
+                          <% } %>
         </div>
       </div>
 
@@ -69,35 +91,57 @@
       <% include ./partials/footer %>
 
         <% include ./partials/scripts %>
-        <% if (session.role == 1) { %>
-        <script>
-          $("#submit").click(function(e) {
-              //debugger
-             console.log($("#idjobid").val())
-              $.ajax({
-                  type: "POST",
-                  url: "/createApplication",
-                  data: { 
-                      applicationid: $("#applicationid").val(),
+          <% if (session.role==1) { %>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+            <script>
+              $(document).ready(function () {
+                $('#appForm').validate();
+              });
+              $("#submit").click(function (e) {
+                debugger
+                e.preventDefault();
+                if (!$("#appForm").valid()) { // Not Valid
+                  alert("Required fields must be filled out");
+                } else {
+                  console.log($("#applicationid").val())
+                  appid = $("#applicationid").val();
+                  if (appid != undefined && appid != '') {
+                    if (statusText == "delete") {
+                      url = "/app/" + appid + "/deleteapp";
+                    }
+                    else { url = "/app/" + appid + "/update"; }
+                  }
+                  else {
+                    url = "/createapplication";
+                  }
+                  var filename = $('#iddocname').val().replace(/C:\\fakepath\\/i, '');
+                  $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: {
+                      applicationid: appid,
                       skills: $("#idskills").val(),
                       education: $("#ideducation").val(),
                       experience: $("#idexperience").val(),
-                      status: $("#idstatus").val(),
+                      status: 2,
                       jobid: $("#idjobid").val(),
                       userid: $("#iduserid").val(),
-                      docname: $("#iddocname").val()
-                  },
-                  dataType: "json",
-                  success: function(result) {
-                      alert('ok');
-                  },
-                  error: function(result) {
-                      alert('error' + result);
-                  }
+                      docname: filename,
+                      docurl: filename + ".com"
+                    },
+                    success: function (result) {
+                      alert('Succesfull');
+                      window.location.href = "/my-applications";
+                    },
+                    error: function (result) {
+                      console.log(result);
+                      alert('error: ' + result.responseText);
+                    }
+                  });
+                }
               });
-          });
-          </script>
-          <% } %>
+            </script>
+            <% } %>
   </body>
 
 </html>

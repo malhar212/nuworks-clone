@@ -13,11 +13,17 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/job/:id', async function (req, res, next) {
-  if (req.params.id && req.session.role && req.session.role == 2) {
+  if (req.params.id && req.session.role) {
     let job = null;
+    let applications = null;
+    let application = null;
     job = await db.getJobById(req.params.id);
     applications = await db.getApplicationsOfJobById(req.params.id);
-    res.render('job', { job: job, session: req.session, applications: applications });
+    console.log(req.session.useremail);
+    console.log(applications)
+    console.log(applications.find((app)=> app.email == req.session.useremail));
+    app = applications.find((app)=> app.email == req.session.useremail);
+    res.render('job', { job: job, session: req.session, applications: applications, app: app });
   }
   else {
     res.redirect('/');
@@ -84,7 +90,10 @@ router.post('/jobs_search', async function (req, res) {
       jobs = await db.getAllJobs();
     }
     else {
-      jobs = [{ jobid: 1, name: "Plip", position: "SE", description: "Lorem ipsum" }, { jobid: 2, name: "sas", position: "E", description: "Lorem ipsum" }]// await leagueFixtures(league_name);
+      position = req.body.position;
+      city = req.body.city;
+      ordering = req.body.sort;
+      jobs = await db.getAllJobs(position, city, ordering);
     }
     /* const file = await readFile('../views/partials/joblist.ejs');
     var job_template = ejs.compile(file, { client: true });
@@ -116,7 +125,7 @@ router.post('/createjob', async function (req, res, next) {
       state = req.body.state;
       city = req.body.city;
       orgid = req.body.orgid,
-      category = req.body.category;
+        category = req.body.category;
       userid = req.session.userid;
       let result = null;
       result = await db.createJob(position, type, desc, jobstatus, vacancycount, orgid, category, userid, state, city);
@@ -156,7 +165,7 @@ router.post('/job/:id/update', async function (req, res, next) {
       state = req.body.state;
       city = req.body.city;
       orgid = req.body.orgid,
-      category = req.body.category;
+        category = req.body.category;
       userid = req.session.userid;
       let result = null;
       result = await db.updateJob(jobid, position, type, desc, jobstatus, vacancycount, orgid, category, state, city);
@@ -213,6 +222,89 @@ router.get('/job/:id/edit', async function (req, res, next) {
     job = await db.getJobById(req.params.id);
     applications = await db.getApplicationsOfJobById(req.params.id);
     res.render('newjob', { job: job, session: req.session });
+  }
+  else {
+    res.redirect('/');
+  }
+});
+
+router.get('/my-applications', async function (req, res, next) {
+  console.log("IN MY JOBS");
+  console.log(req.session.useremail);
+  if (req.session.userid && req.session.role && req.session.role == 1) {
+    let applications = null;
+    applications = await db.getApplicationsByApplicant(req.session.userid);
+    res.render('myapplications', { applications: applications, session: req.session });
+  }
+  else {
+    res.redirect('/');
+  }
+});
+
+router.get('/app/:id/view', async function (req, res, next) {
+  console.log("IN MY JOBS");
+  console.log(req.session.useremail);
+  if (req.session.userid && req.session.role) {
+    let application = null;
+    application = await db.getApplicationById(req.params.id);
+    res.render('application', { application: application, session: req.session });
+  }
+  else {
+    res.redirect('/');
+  }
+});
+
+router.post('/app/:id/deleteapp', async function (req, res, next) {
+  console.log("Application DELETE");
+  console.log(req.session.useremail);
+  if (req.session.userid && req.session.role) {
+    let result = null;
+    result = await db.deleteApp(req.params.id);
+    if (result == undefined || result.err != undefined) {
+      res.status(400)
+      res.send(result);
+    }
+    else {
+      res.status(200);
+      res.send();
+    }
+  }
+  else {
+    res.redirect('/');
+  }
+});
+
+router.post('/createapplication', async function (req, res, next) {
+  console.log("IN MY JOBS");
+  console.log(req.session.useremail);
+  if (req.session.userid && req.session.role && req.session.role == 1) {
+    if (Object.keys(req.body).length == 0) {
+      res.status(400)
+      res.send("Empty request body");
+    }
+    else {
+      console.log(req.body);
+      skills = req.body.skills;
+      education = req.body.education;
+      experience = req.body.experience;
+      appstatus = req.body.status;
+      docname = req.body.docname.substring(0, 45);
+      docurl = req.body.docurl.substring(0, 45);;
+      jobid = req.body.jobid,
+        userid = req.session.userid;
+      let result = null;
+      result = await db.createApplication(userid, skills, education, experience, appstatus, jobid, docname, docurl);
+      //TODO Error checking
+      //res.redirect('/my-jobs');
+      if (result == undefined || result.err != undefined) {
+        res.status(400)
+        res.send(result);
+      }
+      else {
+        res.status(200);
+        res.send();
+      }
+    }
   }
   else {
     res.redirect('/');

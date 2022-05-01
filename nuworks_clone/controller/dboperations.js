@@ -8,10 +8,21 @@ var operations = {
         return undefined;
     },
 
-    getAllJobs: async () => {
-        const [rows, fields] = await db.query('CALL get_all_published_jobs()');
-        if (rows != undefined && rows[0] != undefined && rows[0][0] != undefined)
-            return rows[0];
+    getAllJobs: async (position, city, ordering) => {
+        if (city == undefined) {
+            city = city;
+        }
+        if (position == undefined) {
+            position = null;
+        }
+        if (ordering == undefined) {
+            ordering = "DESC"
+        }
+        console.log(position,city,ordering);
+        const [rows, fields] = await db.query('CALL get_all_published_jobs(?,?,?)',[position, city, ordering]);
+        console.log(rows[1]);
+        if (rows != undefined && rows[1] != undefined)
+            return rows[1];
         return undefined;
     },
 
@@ -109,6 +120,59 @@ var operations = {
         console.log(row1);
         if (row1 != undefined && row1[0] != undefined)
             return row1[0];
+        return { err: 'Some error occured. Please try again' };
+    },
+
+    getApplicationsByApplicant: async (id) => {
+        const [rows, fields] = await db.query('CALL get_all_applicant_applications(?)', [id]);
+        console.log("Getting applications by user");
+        console.log(id);
+        console.log(rows[0]);
+        if (rows != undefined && rows[0] != undefined)
+            return rows[0];
+        return undefined;
+    },
+
+    getApplicationById: async (id) => {
+        const [rows, fields] = await db.query('CALL get_application_data(?)', [id]);
+        console.log("Getting application by id");
+        console.log(id);
+        console.log(rows[0][0]);
+        if (rows != undefined && rows[0] != undefined && rows[0][0] != undefined)
+            return rows[0][0];
+        return undefined;
+    },
+
+    createApplication: async (userid, skills, education, experience, appstatus, jobid, docname, docurl) => {
+        if (appstatus == undefined) {
+            appstatus = 2
+        }
+        result = null
+        try {
+            const [rows, fields] = await db.query('CALL create_new_application(?,?,?,?,?,?,?,?,@result); SELECT @result;', [userid, skills, education, experience, appstatus, jobid, docname, docurl]);
+            console.log("Creating Application");
+            console.log(rows);
+            if (rows != undefined && rows[0] != undefined)
+                return rows[0];
+        }
+        catch (error) {
+            return { err: error.message };
+        }
+        return { err: 'Some error occured. Please try again' };
+    },
+
+    deleteApp: async (appid) => {
+        result = null
+        console.log(appid)
+        try {
+            const [rows, fields] = await db.query('CALL delete_application(?,@result); SELECT @result;', [appid]);
+            console.log(rows);
+            if (rows != undefined && rows[1] != undefined)
+                return rows[1];
+        }
+        catch (error) {
+            return { err: error.message };
+        }
         return { err: 'Some error occured. Please try again' };
     },
 
